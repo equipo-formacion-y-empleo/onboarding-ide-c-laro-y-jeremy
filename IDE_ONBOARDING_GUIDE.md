@@ -4,8 +4,8 @@
 
 > **Nota importante**: Este documento se enfoca en aspectos técnicos y procedimientos. Para análisis comparativos, reflexiones personales y conclusiones, utiliza el archivo `CONCLUSIONES_EVALUACION.md`.
 
-**Autores**: [Nombre 1] y [Nombre 2]
-**Fecha V0**: [Fecha de entrega inicial]
+**Autores**: [Laro 1] y [Jeremy 2]
+**Fecha V0**: [03/10/2025]
 **Fecha V1**: [Fecha de entrega final]
 
 ---
@@ -14,14 +14,14 @@
 
 ### Instalación y Verificación
 
-**Método de instalación:** [Especifica el método recomendado]
+**Método de instalación:** [Descarga web: https://code.visualstudio.com/]
 
 > **💡 Sobre las imágenes**: Incluye capturas de pantalla para mostrar los diferentes pasos o resultados. Ejemplo: ![Descripción clara del contenido](screenshots/placeholder.png)`
 
 **Proceso de instalación:**
-- **Descarga:** [Describir el proceso]
+- **Descarga:** [Para instalar vs Code nos dirigiremos al siguiente link https://code.visualstudio.com/ y le daremos al botón Download for Windows.]
 - **Opciones del instalador:** [Documentar las opciones que se consideraron importantes]
-- **Verificación:** [Cómo verificar que funciona]
+- **Verificación:** [Cómo verificar que funcion muy facil probando cun cualquier lenguaje y haciendo un hello word]
 
 *Es posible documentar múltiples métodos.*
 
@@ -35,7 +35,7 @@
 
 ### Personalización del Entorno
 
-**Configuraciones aplicadas:** [Describir las personalizaciones que se realizaron]
+**Configuraciones aplicadas:** [Se aplicaron las siguientes configuraciones: Palenight Theme, Prettier, Live server, indent-rainbow]
 
 *Ejemplos de configuraciones útiles (elegir las que se consideren relevantes):*
 
@@ -50,6 +50,7 @@ Ejemplos:
 
 **Atajos de teclado útiles:**
 Ejemplos:
+- F5 para ejecutarr el codigo
 - Ctrl+/ para comentar/descomentar
 - Ctrl+Shift+P para paleta de comandos
 - Ctrl+` para terminal integrada
