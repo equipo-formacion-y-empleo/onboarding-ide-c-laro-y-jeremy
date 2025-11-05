@@ -4,8 +4,8 @@
 
 > **Nota importante**: Este documento se enfoca en aspectos técnicos y procedimientos. Para análisis comparativos, reflexiones personales y conclusiones, utiliza el archivo `CONCLUSIONES_EVALUACION.md`.
 
-**Autores**: [Laro 1] y [Jeremy 2]
-**Fecha V0**: [03/10/2025]
+**Autores**: [] y []
+**Fecha V0**: []
 **Fecha V1**: [Fecha de entrega final]
 
 ---
@@ -19,8 +19,8 @@
 > **💡 Sobre las imágenes**: Incluye capturas de pantalla para mostrar los diferentes pasos o resultados. Ejemplo: ![Descripción clara del contenido](screenshots/placeholder.png)`
 
 **Proceso de instalación:**
-- **Descarga:** [Para instalar vs Code nos dirigiremos al siguiente link https://code.visualstudio.com/ y le daremos al botón Download for Windows.]
-- **Opciones del instalador:** [Documentar las opciones que se consideraron importantes]
+- **Descarga:** [Para instalar vs Code nos dirigiremos al siguiente link https://code.visualstudio.com/ y le daremos al botón Download for Windows.] [la interfaz de la pagina](screenshots/foto1.png)
+- **Opciones del instalador:** [ Podemos elejir entre cargas de trabajo, componentes individuales, paquetes de idiomas, ubicacion del insalador, importar configuracion / migrar configuracion, opciones de descarga y modificar, reparar / instalacion ] [el stable]
 - **Verificación:** [Cómo verificar que funcion muy facil probando cun cualquier lenguaje y haciendo un hello word]
 
 *Es posible documentar múltiples métodos.*
@@ -50,7 +50,7 @@ Ejemplos:
 
 **Atajos de teclado útiles:**
 Ejemplos:
-- F5 para ejecutarr el codigo
+- F5 para ejecutar el codigo
 - Ctrl+/ para comentar/descomentar
 - Ctrl+Shift+P para paleta de comandos
 - Ctrl+` para terminal integrada
@@ -72,24 +72,24 @@ Ejemplos:
 ### SDK .NET
 
 **Proceso de instalación:**
-1. **Descarga e instalación:** [Describir el proceso]
-2. **Verificación:** [Cómo comprobar que funciona]
+1. **Descarga e instalación:** [Para instalar el SDK de .NET, debe dirigirse al sitio oficial de descargas disponible en https://dotnet.microsoft.com/en-us/download
+, seleccionar la versión requerida y descargar el instalador correspondiente al sistema operativo utilizado. Una vez descargado, ejecute el instalador y siga las instrucciones proporcionadas.] [captura de la interfaz de la web](screenshots/placeholder4.png)
+2. **Verificación:** [Para comprobar que la instalación se ha realizado correctamente, abra una terminal o consola y ejecute el siguiente comando: dotnet --version. Si la instalación fue exitosa, se mostrará en pantalla el número de versión instalada, lo que confirmará que el SDK está correctamente configurado.]
 
 ### Configuración para C#
 
 **Extensiones esenciales:**
-- **Soporte oficial para C#**: Extensión que proporciona IntelliSense, debugging y compilación
+- **Soporte oficial para C#**: Se recomienda instalar la extensión oficial de C# disponible en el marketplace de Visual Studio Code, la cual proporciona soporte para funcionalidades clave como IntelliSense, depuración y compilación del código.
 
 
 **Configuraciones específicas para C#:** 
-[Describir las configuraciones que se aplicaron, como formateo automático, intellisense, o configuraciones del compilador]
+Es importante establecer configuraciones que mejoren la experiencia de desarrollo, tales como el formateo automático del código al guardar, la habilitación de sugerencias inteligentes (IntelliSense) y ajustes personalizados del compilador. Estas configuraciones pueden aplicarse directamente desde el archivo settings.json del editor.
 
 **Debugging básico:**
-- Configuración de puntos de interrupción (breakpoints)
-- Ejecutar y depurar
-- Inspección de variables
+Para depurar aplicaciones en C#, se debe configurar adecuadamente el entorno permitiendo el uso de puntos de interrupción (breakpoints), la ejecución paso a paso y la inspección de variables durante la ejecución. Estas funciones básicas permiten identificar y resolver errores de forma eficiente.
 
-> **Enfoque práctico**: Concentra tu documentación en las funcionalidades básicas que usarás día a día.
+**Enfoque práctico:** 
+La documentación debe centrarse en las funcionalidades esenciales que se utilizan en el trabajo cotidiano, evitando configuraciones innecesarias o avanzadas que no aporten valor directo al flujo de desarrollo.
 
 ### Flujo de Trabajo con C#
 
