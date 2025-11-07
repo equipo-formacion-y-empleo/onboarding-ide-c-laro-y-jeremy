@@ -73,7 +73,7 @@ Ejemplos:
 
 **Proceso de instalación:**
 1. **Descarga e instalación:** [Para instalar el SDK de .NET, debe dirigirse al sitio oficial de descargas disponible en https://dotnet.microsoft.com/en-us/download
-, seleccionar la versión requerida y descargar el instalador correspondiente al sistema operativo utilizado. Una vez descargado, ejecute el instalador y siga las instrucciones proporcionadas.] [captura de la interfaz de la web](screenshots/placeholder4.png)
+, seleccionar la versión requerida y descargar el instalador correspondiente al sistema operativo utilizado. Una vez descargado, ejecute el instalador y siga las instrucciones proporcionadas.] [captura de la interfaz de la web](placeholder4.png)
 2. **Verificación:** [Para comprobar que la instalación se ha realizado correctamente, abra una terminal o consola y ejecute el siguiente comando: dotnet --version. Si la instalación fue exitosa, se mostrará en pantalla el número de versión instalada, lo que confirmará que el SDK está correctamente configurado.]
 
 ### Configuración para C#
