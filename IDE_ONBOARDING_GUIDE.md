@@ -261,13 +261,19 @@ for (int i = 0; i < 10; i++)
 }
 
 
-Puedes establecer un punto de interrupción en la línea que asigna variables (int testInt = 3), en el bucle for o en cualquier instrucción dentro de dicho bucle. No es posible colocar puntos de interrupción en firmas de métodos, declaraciones de espacios de nombres o clases, ni en declaraciones de variables que no contengan asignación o no tengan captador o establecedor.
+Es posible colocar un punto de interrupción en una línea donde se asignen variables (por ejemplo, int testInt = 3), dentro de un bucle for o en cualquier instrucción dentro de ese bucle. No se pueden establecer puntos de interrupción en firmas de métodos, declaraciones de espacios de nombres o clases, ni en declaraciones de variables que no incluyan asignación o carezcan de métodos getter o setter.
 
-Para agregar un punto de interrupción en el código fuente:
+Cómo agregar un punto de interrupción en el código fuente
 
-Haz clic en el margen izquierdo, justo al lado de la línea de código deseada. También puedes seleccionar la línea y presionar F9, o ir a Depurar>Alternar punto de interrupción, o hacer clic derecho y elegir Punto de interrupción>Insertar punto de interrupción. El punto de interrupción aparecerá como un círculo rojo en el margen izquierdo.
+Haga clic en el margen izquierdo junto a la línea de código deseada.
 
-En la mayoría de los lenguajes (incluido C#), Visual Studio resalta automáticamente el punto de interrupción y la línea de ejecución actual. En algunos lenguajes, como C++, que no cuentan con este resaltado por defecto, puedes activar la opción para que se iluminen el punto de interrupción y las líneas actuales.
+También puede seleccionar la línea y presionar F9.
+
+Otra opción es ir a Depurar > Alternar punto de interrupción o hacer clic derecho sobre la línea y elegir Punto de interrupción > Insertar punto de interrupción.
+
+El punto de interrupción se mostrará como un círculo rojo en el margen izquierdo.
+
+En la mayoría de los lenguajes, incluido C#, Visual Studio resalta automáticamente el punto de interrupción y la línea de ejecución actual. En algunos lenguajes, como C++, donde este resaltado no está activado por defecto, se puede habilitar manualmente para ver claramente el punto de interrupción y la línea en ejecución.
 
 Abre el cuadro de diálogo Opciones de herramientas> expande la sección Depuración y activa la casilla Resaltar toda la línea de origen para los puntos de interrupción y la instrucción actual (solo C++).. [Seleccione *Aceptar* para aplicar el cambio.](screenshots/screenshot32.png)
 
@@ -334,26 +340,30 @@ Para interrumpir la ejecución en la instrucción o línea a la que una función
 
     Aparecerá un símbolo de punto de interrupción junto al nombre de la llamada de función en el margen izquierdo de la pila de llamadas.
 
-El punto de interrupción de la pila de llamadas aparece en la ventana *Puntos de Interrupción* como una dirección, con una ubicación de memoria que corresponde a la siguiente instrucción ejecutable de la función.
+El punto de interrupción de la pila de llamadas se muestra en la ventana Puntos de Interrupción como una dirección de memoria que apunta a la siguiente instrucción ejecutable de la función.
 
-El depurador interrumpe la ejecución en la instrucción.
-Para obtener más información sobre la pila de llamadas, vea Cómo usar la ventana pila de llamadas.
-Si quiere realizar un seguimiento visual de los puntos de interrupción durante la ejecución del código, vea Asignar métodos en la pila de llamadas durante la depuración.
+Cuando se alcanza, el depurador detiene la ejecución en esa instrucción. Para más detalles sobre la pila de llamadas, consulte Cómo usar la ventana pila de llamadas.
+Si desea seguir visualmente los puntos de interrupción mientras se ejecuta el código, consulte Asignar métodos en la pila de llamadas durante la depuración.
 
 Establecer un punto de interrupción en la ventana Desensamblado
-Para abrir la ventana Desensamblado, la depuración debe estar en pausa. Seleccione Depurar>Windows>Desensamblaro presione Ctrl+Alt+D.
 
-En la ventana Desensamblado, haga clic en el margen izquierdo de la instrucción que quiera interrumpir. También puede seleccionarlo y presionar F9, o bien hacer clic con el botón derecho y seleccionar Punto de interrupción>Insertar punto de interrupción.
+Para abrir la ventana Desensamblado, la depuración debe estar en pausa. Vaya a Depurar > Windows > Desensamblado o presione Ctrl+Alt+D.
+
+Dentro de la ventana Desensamblado, puede hacer clic en el margen izquierdo junto a la instrucción que desea interrumpir. También es posible seleccionarla y presionar F9, o hacer clic derecho y elegir Punto de interrupción > Insertar punto de interrupción.
 
 `Inspección de variables`
 *Inspección de variables y valores devueltos en el depurador de Visual Studio*
-Al intentar depurar un problema, a menudo intenta averiguar si las variables almacenan los valores que espera que tengan en un estado de aplicación determinado. Algunas de las características más útiles del depurador son las que permiten inspeccionar variables.
-En este artículo se muestra cómo inspeccionar variables y ver los valores devueltos mediante el depurador en Visual Studio. El depurador proporciona varias maneras cómodas de realizar estas tareas, incluidas las siguientes:
+Al depurar un problema, normalmente se busca comprobar si las variables contienen los valores que se esperan en un determinado estado de la aplicación. Una de las herramientas más útiles del depurador es la capacidad de inspeccionar estas variables.
 
-  --En el editor de código, puede ver sugerencias de datos y valores devueltos en línea.
-  --En ventanas del depurador (Automáticos, Variables locales e Inspección), puede ver los valores de las variables.
-  --En los visualizadores, puede ver cadenas grandes o objetos .NET complejos.
-Estas características solo están disponibles durante la depuración. Para obtener información sobre cómo iniciar una sesión de depuración, consulte Iniciar la depuración y entrar en modo de interrupción.
+Este artículo explica cómo examinar variables y consultar los valores devueltos utilizando el depurador de Visual Studio. Existen varias formas prácticas de hacerlo, entre ellas:
+
+En el editor de código: puede ver sugerencias de datos y valores devueltos directamente en línea.
+
+En las ventanas del depurador (Automático, Variables locales e Inspección): puede consultar los valores de las variables.
+
+Mediante visualizadores: puede examinar cadenas largas u objetos complejos de .NET.
+
+Estas funciones solo están disponibles mientras la aplicación se encuentra en modo de depuración. Para más información sobre cómo iniciar la depuración y pausar la ejecución, consulte Iniciar la depuración y entrar en modo de interrupción.
 
 *Visualización de variables en el editor de Código*
 A menudo, al depurar, necesita una forma rápida de comprobar los valores de propiedad de los objetos en el editor de código y la información sobre datos es una buena forma de hacerlo.
@@ -394,9 +404,9 @@ Un valor rojo en la ventana *Locales* o *Automático* significa que el valor ha 
 El formato numérico predeterminado en las ventanas del depurador es decimal. Para cambiarlo a hexadecimal, haga clic con el botón derecho en la ventana *Variables locales* o *Automático*, y seleccione *Presentación hexadecimal*. El cambio afecta a todas las ventanas del depurador.
 
 *Editar valores de variable en la ventana Autos o Variables locales*
-Para editar los valores de la mayoría de las variables en las ventanas de Automático o Variables locales, haga doble clic en el valor y escriba el nuevo valor.
-Puede escribir una expresión para un valor, por ejemplo, a + b. El depurador acepta la mayoría de las expresiones de lenguaje válidas.
-En el código nativo de C++, es posible que tenga que calificar el contexto de un nombre de variable. Para obtener más información, vea Operador de contexto (C++).
+Para modificar los valores de la mayoría de las variables en las ventanas Automático o Variables locales, basta con hacer doble clic sobre el valor y escribir el nuevo.
+También es posible ingresar expresiones como a + b; el depurador admite la mayoría de las expresiones válidas del lenguaje.
+En el caso de código nativo de C++, puede ser necesario especificar el contexto de una variable. Para más detalles, consulte Operador de contexto (C++).
 
 *Búsqueda en las ventanas Automático o Variables locales*
 Puede buscar palabras clave en las columnas Nombre, Valor y Tipo de la ventana *Autos* o de la ventana *Locals* mediante la barra de búsqueda situada encima de cada ventana. Presione ENTRAR o seleccione una de las flechas para ejecutar una búsqueda. Para cancelar una búsqueda en curso, seleccione el icono "x" en la barra de búsqueda.
@@ -404,12 +414,15 @@ Use las flechas izquierda y derecha (Mayús+F3 y F3, respectivamente) para despl
 Para que la búsqueda sea más o menos exhaustiva, use la lista desplegable *Búsqueda más profunda* en la parte superior de la ventana *Automóviles* o *Locales* para seleccionar cuántos niveles de profundidad desea buscar en objetos anidados.
 
 *Abrir un visualizador para inspeccionar variables*
-Mientras depuras en Visual Studio, puedes ver cadenas grandes o objetos complejos con visualizadores integrados que hacen que los datos sean más fáciles de inspeccionar. Por ejemplo:
+Al depurar en Visual Studio, es posible examinar cadenas extensas u objetos complejos mediante visualizadores integrados que facilitan la inspección de los datos. Por ejemplo:
 
-  --El visualizador de cadenas muestra cadenas de texto, XML, HTML y JSON que son demasiado largas para una ventana de información o depurador de datos. También puede ayudarle a identificar cadenas malformadas. Para obtener más información, vea Ver cadenas en un visualizador de cadenas.
-  --Los visualizadores DataSet e IEnumerable muestran objetos de colección .NET en un visualizador tabular. Para más información, vea Visualizadores tabulares en objetos de Visual Studio.
-Los visualizadores aparecen en las ventanas Automático , sugerencias de datos y otras ventanas del depurador.
-Para abrir el visualizador, la depuración debe estar en pausa. Mantenga el puntero sobre una variable que tenga un valor de visualizador compatible y seleccione el icono de [lupa VisualizerIcon.](screenshots/screenshot44.png)
+Visualizador de cadenas: permite mostrar textos largos, así como contenido en XML, HTML y JSON que no cabría en la ventana de información o en el depurador de datos. También resulta útil para detectar cadenas mal formadas. Para más detalles, consulte Ver cadenas en un visualizador de cadenas.
+
+Visualizadores DataSet e IEnumerable: presentan colecciones de objetos .NET en un formato tabular, lo que simplifica su análisis. Para obtener más información, consulte Visualizadores tabulares en objetos de Visual Studio.
+
+Estos visualizadores se pueden usar en las ventanas Automático, Sugerencias de datos y otras del depurador.
+
+Para abrir el visualizador, la depuración debe estar en pausa. Mantenga el puntero sobre una variable que tenga un valor de visualizador compatible y seleccione el icono de [lupa VisualizerIcon.](screenshots/screenshot44.png).
 Abrir visualizador de cadenas
 
 > **Enfoque práctico**: Concentra tu documentación en las funcionalidades básicas que usarás día a día.
@@ -464,10 +477,10 @@ Comentarios sobre las decisiones tomadas:
 
 **Compilación y ejecución:**
 
-`Depurar código con Visual Studio Code`
-Visual Studio Code ofrece un amplio soporte para la depuración de diversos tipos de aplicaciones. VS Code incluye soporte integrado para la depuración de JavaScript, TypeScript y Node.js. El Marketplace de Visual Studio ofrece una gran variedad de extensiones de depuración para añadir soporte para otros lenguajes y entornos de ejecución a VS Code.
+`Depuración de código en Visual Studio Code`
+Visual Studio Code proporciona un soporte completo para depurar distintos tipos de aplicaciones. De manera nativa, VS Code permite depurar JavaScript, TypeScript y Node.js. Además, el Marketplace de Visual Studio ofrece numerosas extensiones que amplían la depuración a otros lenguajes y entornos de ejecución.
 
-Este artículo describe las funciones de depuración de VS Code y cómo empezar a depurar en VS Code. También aprenderá a usar Copilot en VS Code para acelerar la configuración de la depuración y el inicio de una sesión de depuración.
+En este artículo se explorarán las funcionalidades de depuración que ofrece VS Code y se explicará cómo iniciar una sesión de depuración. También se mostrará cómo utilizar Copilot en VS Code para facilitar la configuración y el arranque de la depuración.
 
 `Interfaz de usuario del depurador`
 [El siguiente diagrama muestra los componentes principales de la interfaz de usuario del depurador]
@@ -1060,34 +1073,32 @@ La extensión Ionide-fsharp integra el sistema de depuración de VS Code a trav�
 **Configuraciones específicas aplicadas:**
 [Documentar los ajustes que se realizaron, como configuración del intérprete, formateo automático, linting, etc.]
 
-``Python``
---Intérprete: Seleccionado vía Ctrl + Shift + P → Python: Select Interpreter para usar el entorno virtual correcto.
---Linting: Activado Pylint para detectar errores de sintaxis y estilo en tiempo real.
+`Python`
+--Intérprete: Seleccionado mediante Ctrl + Shift + P → Python: Select Interpreter para usar el entorno virtual adecuado.
+--Linting: Activado Pylint para identificar errores de sintaxis y de estilo en tiempo real.
 --Formateo automático: Configurado Black como formateador predeterminado (Format On Save).
---Entorno virtual: venv para aislar dependencias.
+--Entorno virtual: venv para aislar dependencias del proyecto.
 --Debugging: Configurado en launch.json para depuración paso a paso con breakpoints.
 
-``Java``
---JDK: Configurado JDK 17 vía Java: Configure Java Runtime.
+`Java`
+--JDK: Configurado JDK 17 mediante Java: Configure Java Runtime.
 --Gestión de proyectos: Maven integrado para construcción y manejo de dependencias.
 --Debugging: F5 con breakpoints para depuración de proyectos Java.
---Formateo de código: Estilo Eclipse/Google Java Style para uniformidad.
+--Formateo de código: Estilo Eclipse/Google Java Style para mantener uniformidad.
 
-``F#``
---.NET SDK: SDK 8.0 instalado para compilar y ejecutar proyectos.
+`F#`
+--.NET SDK: Instalado SDK 8.0 para compilar y ejecutar proyectos.
 --Extensión: Ionide activada para IntelliSense, resaltado de sintaxis y gestión de proyectos.
 --Debugging: Integrado con .NET Debugger, permite inspección de variables y breakpoints.
 --Formateo de código: Ionide Formatter para mantener consistencia en el estilo funcional.
 
-``C# (opcional si se agrega)``
-
+`C# (opcional si se agrega)`
 --.NET SDK: Configurado para desarrollo en C#.
 --Extensión: C# (Microsoft) instalada para IntelliSense, debugging y gestión de proyectos.
 --Debugging: F5 con breakpoints y control de ejecución paso a paso.
---Formateo de código: Configuración de estilo C# según conveniencia del proyecto.
+--Formateo de código: Configuración de estilo C# según las necesidades del proyecto.
 
-``Ajustes generales en VS Code``
-
+`Ajustes generales en VS Code`
 --Format On Save: Activado (true) para todos los lenguajes configurados.
 --Terminal integrado: Configurado con PowerShell o Bash según el sistema operativo.
 --Git: Extensión GitLens instalada para historial y autoría de cambios.
@@ -1166,30 +1177,27 @@ hello Jeremy
 
 **Configuraciones generales:**
 *Documentar configuraciones que se consideran útiles para cualquier desarrollador*
-Configuraciones generales:
+`JDK (Java Development Kit)`
 
+Instalar la versión más reciente de JDK 17 o JDK 20, según los requisitos del proyecto.
 
-JDK (Java Development Kit):
+Configurar la variable de entorno JAVA_HOME apuntando al directorio donde se instaló el JDK.
 
-Instalar la versión más reciente de JDK 17 o JDK 20, según tu proyecto.
+Agregar al PATH la ruta correspondiente: %JAVA_HOME%\bin en Windows o $JAVA_HOME/bin en Linux/Mac.
 
-Configurar la variable de entorno JAVA_HOME apuntando al directorio del JDK.
-
-Agregar %JAVA_HOME%\bin (Windows) o $JAVA_HOME/bin (Linux/Mac) al PATH.
-
-IDE o editor de código:
+`IDE o editor de código`
 
 IntelliJ IDEA Community o Ultimate (recomendado para proyectos grandes).
 
 Eclipse IDE (alternativa gratuita).
 
-VS Code con extensión Java Extension Pack (ligero y flexible).
+VS Code con la extensión Java Extension Pack (ligero y flexible).
 
-Codificación y formato:
+`Codificación y formato`
 
-Configurar el estilo de código según las guías de Java: sangrías de 4 espacios, nombres de variables camelCase, nombres de clases PascalCase.
+Seguir las guías de estilo de Java: sangrías de 4 espacios, nombres de variables en camelCase y nombres de clases en PascalCase.
 
-Activar “Auto-Format on Save” en tu IDE para mantener el código limpio.
+Activar la opción Auto-Format on Save en tu IDE para mantener el código limpio y consistente.
 
 **Herramientas adicionales:**
 *Extensions, herramientas CLI, o utilidades que se consideran beneficiosas*
@@ -1239,7 +1247,6 @@ Problema: Dependencias Maven no se descargan
 Causa común: Configuración de proxy o repositorio
 
 Solución: Revisar el archivo settings.xml de Maven y la conectividad a internet
-
 
 Problema: Proyecto no compila en IDE
 
