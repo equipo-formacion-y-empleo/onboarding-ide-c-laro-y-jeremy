@@ -55,7 +55,7 @@
   *Uso de la paleta de comandos*
 -  representa una de las características más potentes. Accesible mediante *Ctrl+Shift+P (Windows/Linux)* o *Cmd+Shift+P (macOS)*, proporciona acceso instantáneo a prácticamente cualquier comando disponible en el editor.Desde allí puedes ejecutar cualquier acción, como:
 
-  ºCambiar el tema [(Preferences: Color Theme)](screenshots/screenshot6.png)
+  ºCambiar el tema ![(Preferences: Color Theme)](screenshots/screenshot6.png)
 
   ºInstalar extensiones [(Extensions: Install Extensions)](screenshots/screenshot7.png)
 
