@@ -1,7 +1,7 @@
 # Conclusiones y Evaluación - Entornos de Desarrollo C#
 
-**Autores**: [Nombre 1] y [Nombre 2]
-**Fecha Entrega Inicial**: [Fecha]
+**Autores**: [Jeremy Hidalgo] y [Laro Barreda]
+**Fecha Entrega Inicial**: [03/10/2025]
 **Fecha Entrega Final**: [Fecha]
 
 > **Instrucciones**: Completar la **Sección A** para la entrega inicial y **todas las secciones** para la entrega final. Indicar claramente qué partes corresponden a cada fase.
@@ -14,18 +14,18 @@
 
 | Aspecto | Visual Studio Code | Visual Studio |
 |---------|-------------------|---------------|
-| **Facilidad de instalación** | [Experiencia inicial] | [Experiencia inicial] |
-| **Primera impresión** | [Evaluación] | [Evaluación] |
-| **Configuración básica** | [Observación] | [Observación] |
-| **Soporte para C#** | [Análisis inicial] | [Análisis inicial] |
+| **Facilidad de instalación** | [Muy facil de instalar] 
+| **Primera impresión** | [Facil de utilizar y bastantes herramientas y atajos] 
+| **Configuración básica** | [Instalamos varias extenciones y cambiamos algunos atajos como el f5 para ejecutar]
+| **Soporte para C#** | [Para C# instalamos una extencion de C# como (C# Dev Kit para los complementos del lenguaje) y el support para C# que es otra extencion de Marketplace] 
 
 ### Preferencia Inicial
-**IDE que se prefiere tras la configuración inicial:** [Visual Studio Code / Visual Studio]
+**IDE que se prefiere tras la configuración inicial:** [Visual Studio Code]
 
 **Razones iniciales:**
-- [Primera razón basada en configuración inicial]
-- [Segunda razón basada en primeras pruebas]
-- [Tercera razón si aplica]
+- [Es la mas usada]
+- [Diferentes tipos de extenciones en la marketplace]
+- [Mas intuitivo]
 
 ---
 
@@ -35,31 +35,31 @@
 
 | Aspecto | Visual Studio Code | Visual Studio |
 |---------|-------------------|---------------|
-| **Productividad real** | [Tras semanas de uso] | [Tras semanas de uso] |
-| **Facilidad para desarrollo** | [Experiencia práctica] | [Experiencia práctica] |
-| **Herramientas más utilizadas** | [Lo que realmente se usa] | [Lo que realmente se usa] |
-| **Valoración final** | [Evaluación final] | [Evaluación final] |
+| **Productividad real** | [en rapidez de escribir codigo bien y interfaz intuitiva] | [interfaz mas diferente y en codigo mas rapido.] |
+| **Facilidad para desarrollo** | [Muy facil de utilizar] | [Rapido para crear spacenames o clases] |
+| **Herramientas más utilizadas** | [las extenciones como prettier] | [codigo inteligente como IntelliSense] |
+| **Valoración final** | [10/10] | [7/10] |
 
 ### Evolución de la Preferencia
 
-**¿Cambió la preferencia inicial?** [Sí/No]
+**¿Cambió la preferencia inicial?** [No]
 
-**IDE preferido final:** [Visual Studio Code / Visual Studio]
+**IDE preferido final:** [Visual Studio Code]
 
 **Justificación del cambio o mantenimiento:**
-[Explicar cómo la experiencia práctica influyó en la decisión final]
+[Alfinal y alcabo se utilizo mas visual Studio code por popularidad mientras que visual studio no se utilizo mas que un 10% del tiempo por costumbre elegimos visual studio code]
 
 ### Principales Aprendizajes
 
 **Lo que no se esperaba al principio:**
-- [Descubrimiento 1]
-- [Descubrimiento 2]
+- [Ya teniamos experiencia con este editor de codigo mientras que visual studio nunca lo utilizamos fuera de este curso]
+- [Visual studio no es para nada malo solo que tendriamos que probarlo mas]
 
 **Características más valiosas en la práctica:**
-[Herramientas o funcionalidades que resultaron esenciales en el uso diario]
+[El prettier, powershell desde las extenciones y el live server ]
 
 **Características menos útiles de lo esperado:**
-[Funcionalidades que parecían importantes pero no se utilizaron frecuentemente]
+[El better comments o como github copilot que no lo hemos probado ]
 
 ---
 
@@ -68,10 +68,10 @@
 ### Aspectos Más Destacados
 
 **De Visual Studio Code:**
-[Lo que más destacó o resultó útil]
+[La interfaz muy intuitiva y muy personalizable]
 
 **De Visual Studio:**
-[Lo que más destacó o resultó útil]
+[Gestiona proyectos con facilidad]
 
 ### Dificultades Encontradas
 
@@ -79,18 +79,18 @@
 [Describir problemas significativos y sus soluciones]
 
 **Curva de aprendizaje:**
-[Aspectos que requirieron más tiempo para dominar]
+[Bucles como tambien if else ]
 
 ### Conocimientos Adquiridos
 
 **Principales aprendizajes técnicos:**
-1. [Aprendizaje técnico 1]
-2. [Aprendizaje técnico 2]
-3. [Aprendizaje técnico 3]
+1. [Manejo de atajos para una velocidad mas rapida y eficaz]
+2. [instalacion de verciones de .net o jdk]
+3. [Manejo de consola y dotnet]
 
 **Habilidades desarrolladas:**
-- [Habilidad práctica 1]
-- [Habilidad práctica 2]
+- [saber un poco de todo como python, java y c# ]
+- [funcionamiento de bucles y variales ]
 
 ---
 
@@ -98,47 +98,47 @@
 
 ### Recomendación Principal
 
-**Para desarrollo en C#, se recomienda:** [Visual Studio Code / Visual Studio]
+**Para desarrollo en C#, se recomienda:** [Visual Studio Code]
 
 **Justificación basada en experiencia:**
-[Explicación fundamentada en el uso real de ambas herramientas]
+[Simplemente por costumbre pero se sabe que visual studio es mejor para c# por su depurador]
 
 ### Configuraciones Esenciales
 
 **Configuraciones indispensables para productividad:**
-1. [Configuración crítica 1]
-2. [Configuración crítica 2]
-3. [Configuración crítica 3]
+1. [atajos de run]
+2. [cambiar tema de la interfaz]
+3. [tener todo actualizado ]
 
 **Extensiones que no pueden faltar:**
-- [Extensión esencial 1]
-- [Extensión esencial 2]
+- [Prettier]
+- [indent-rainbow]
 
 ### Para Futuros Desarrolladores
 
 **Consejos para alguien que inicia con C#:**
-- [Consejo práctico 1]
-- [Consejo práctico 2]
-- [Consejo práctico 3]
+- [Le recomiendo mucha practica]
+- [Bastante paciencia con el codigo y sus extenciones .net]
+- [Revisar y entender bien el codigo]
 
 **Errores a evitar:**
-- [Error común 1 y cómo evitarlo]
-- [Error común 2 y cómo evitarlo]
+- [tener la version deseada de c# y .net como sus extenciones, para evitarlo mirar vien las versiones instaladas desde el cmd ]
+- [la sintaxis y identacion,  mirar bien el codigo y confirmar si esta bien ]
 
 ---
 
 ## 🤝 Trabajo en Equipo
 
 ### Organización del Trabajo
-[Describir brevemente cómo se dividieron las tareas entre los integrantes]
+[Cada 2 ejercicios cambiamos de persona]
 
 ### Beneficios de la Colaboración
-[Ventajas identificadas al trabajar en equipo en este proyecto]
+[mas rapido y mayor ayuda en el codigo]
 
 ### Mejoras para Futuros Proyectos
 [Sugerencias para optimizar la colaboración en proyectos similares]
 
----
+La participacion y ejemplos en el proyector como ahora
 
 ## 📝 Conclusión Final
 
@@ -154,5 +154,7 @@
 
 **Lo más valioso del ejercicio:**
 [Principal aprendizaje o insight obtenido del proceso completo]
+
+El aprendizaje basico de C#, java y python
 
 ---
