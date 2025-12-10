@@ -14,22 +14,22 @@
 
 ### Instalación y Verificación
 
-**Método de instalación:** [Desde la pagina oficial del Visual Studio Code: https://code.visualstudio.com/](screenshots/screenshot1.png)
+**Método de instalación:** ![Desde la pagina oficial del Visual Studio Code: https://code.visualstudio.com/](screenshots/screenshot1.png)
 
 > **💡 Sobre las imágenes**: Incluye capturas de pantalla para mostrar los diferentes pasos o resultados. Ejemplo: ![Descripción clara del contenido](screenshots/placeholder.png)`
 
 **Proceso de instalación:**
 - **Descarga:**
- `Paso 1` [Ir a la pagina *http://code.visualstudio.com/*,](screenshots/screenshot1.png).
+ `Paso 1` ![Ir a la pagina *http://code.visualstudio.com/*,](screenshots/screenshot1.png).
  `Paso 2` Presiona el botón Download for Windows o el del sistema operativo que utilices; se descargará un archivo instalador como VSCodeUserSETUP-X64.
 - **Opciones del instalador:** 
-  `Paso 3` Ubica el archivo descargado, ejecútalo, acepta los términos y condiciones [aceptar terminos y licencias!](screenshots/screenshot2.png) y haz clic en Next.
+  `Paso 3` Ubica el archivo descargado, ejecútalo, acepta los términos y condiciones ![aceptar terminos y licencias!](screenshots/screenshot2.png) y haz clic en Next.
   `Paso 4` Selecciona la carpeta donde deseas instalarlo o deja la ruta predeterminada.
   `Paso 5`Decide si quieres modificar el nombre de la carpeta del menú Inicio o si prefieres no crear accesos directos allí. Luego haz clic en Next.
   `Paso 6` Marca las tareas adicionales que desees, como crear un acceso directo en el escritorio o añadir opciones al menú contextual del Explorador de Windows. Después presiona Next.
   `Paso 7` Haz clic en Install para comenzar la instalación.
   `Paso 8` Una vez finalizado, el programa estará listo. Presiona Finish para completar el proceso y abrir Visual Studio Code.
-- **Verificación:**Al iniciar Visual Studio Code, si observas en la ventana principal opciones como "Open Folder", "New File", etc., significa que [la instalación fue exitosa.](screenshots/screenshot3.png)
+- **Verificación:**Al iniciar Visual Studio Code, si observas en la ventana principal opciones como "Open Folder", "New File", etc., significa que ![la instalación fue exitosa.](screenshots/screenshot3.png)
 
 *Es posible documentar múltiples métodos.*
 
@@ -57,14 +57,14 @@
 
   ºCambiar el tema ![(Preferences: Color Theme)](screenshots/screenshot6.png)
 
-  ºInstalar extensiones [(Extensions: Install Extensions)](screenshots/screenshot7.png)
+  ºInstalar extensiones ![(Extensions: Install Extensions)](screenshots/screenshot7.png)
 
   *Gestión de archivos y carpetas* 
   Los espacios de trabajo en VSCode permiten organizar proyectos complejos que involucran múltiples carpetas o repositorios. Un espacio de trabajo puede incluir configuraciones específicas, extensiones recomendadas y ajustes de depuración particulares como:
 
-  ºAbrir una carpeta: [Archivo → Abrir carpeta](screenshots/screenshot4.png)
+  ºAbrir una carpeta: ![Archivo → Abrir carpeta](screenshots/screenshot4.png)
 
-  ºCrear archivos: clic derecho en el Explorador → [Nuevo archivo.](screenshots/screenshot5.png)
+  ºCrear archivos: clic derecho en el Explorador → ![Nuevo archivo.](screenshots/screenshot5.png)
 
   ºGuardar: Ctrl + S
 
@@ -78,13 +78,13 @@ Ejemplos de configuraciones útiles (incluye solo las que consideres necesarias)
 **Temas e íconos:**
 Ejemplos:
 
-Se añadió la extensión Palenight Theme para obtener un tema atractivo y moderno, inspirado en el estilo Material Design para [Visual Studio Code](screenshots/screenshot8.png)
+Se añadió la extensión Palenight Theme para obtener un tema atractivo y moderno, inspirado en el estilo Material Design para ![Visual Studio Code](screenshots/screenshot8.png)
 
 **Configuración de fuentes:**
 Ejemplos:
 
 Se instaló la extensión Better Comments.
-Esta herramienta mejora la manera de visualizar los comentarios, facilitando su lectura dentro del [código](screenshots/screenshot9.png)
+Esta herramienta mejora la manera de visualizar los comentarios, facilitando su lectura dentro del ![código](screenshots/screenshot9.png)
 
 **Atajos de teclado útiles:**
 Ejecutar archivo → Ctrl + F5
@@ -99,13 +99,13 @@ Formatear el documento → Shift + Alt + F []
 Formateo automático al guardar
 Si "editor.formatOnSave": false, lo actualizaremos a:
 "editor.formatOnSave": true,
-Así, cada vez que guardes (Ctrl + S), el archivo se ajustará automáticamente según las reglas del lenguaje y el formateador [elegido](screenshots/screenshot22.png)
+Así, cada vez que guardes (Ctrl + S), el archivo se ajustará automáticamente según las reglas del lenguaje y el formateador ![elegido](screenshots/screenshot22.png)
 
 Ajuste de líneas largas (Word wrap)
 Si "editor.wordWrap": "off", lo cambiaremos a:
 "editor.wordWrap": "on"
 Esto evita el desplazamiento horizontal cuando las líneas son muy extensas.
-El texto se ajustará automáticamente al ancho de la ventana del [editor.](screenshots/screenshot22.png)
+El texto se ajustará automáticamente al ancho de la ventana del ![editor.](screenshots/screenshot22.png)
 
 **Terminal integrada:**
 - PowerShell como terminal predeterminado
@@ -159,16 +159,16 @@ El .NET SDK (Software Development Kit) contiene el compilador, las herramientas 
 1. **Descarga e instalación:** 
 
 **DESCARGA**
-  `Paso 1`Ir a la pagina oficial: [https://dotnet.microsoft.com/download](screenshots/screenshot24.png), selecciona la versión .NET 8.0 (LTS) o superior.
+  `Paso 1`Ir a la pagina oficial: ![https://dotnet.microsoft.com/download](screenshots/screenshot24.png), selecciona la versión .NET 8.0 (LTS) o superior.
 
-  `Paso 2` hacer click en el boton *descargar SDK X64 de .NET* o superior, se descargara un archivo insatalador [como:](screenshots/screenshot25.png) 
+  `Paso 2` hacer click en el boton *descargar SDK X64 de .NET* o superior, se descargara un archivo insatalador ![como:](screenshots/screenshot25.png) 
 
 **Opciones del instalador:**
-  `Paso 1` Buscaremos la direccion donde se guardo el archivo, ejecutamos el [archivo.exe](screenshots/screenshot25.png)
+  `Paso 1` Buscaremos la direccion donde se guardo el archivo, ejecutamos el ![archivo.exe](screenshots/screenshot25.png)
   
-  `Paso 2` Ejecuta el instalador y sigue las instrucciones [predeterminadas.](screenshots/screenshot26.png)
-  `Paso 3` al dar en *instalar* nos pedira permiso para instalacion le damos en *SI* y comenzara la [instalacion](screenshots/screenshot27.png)
-  `Paso 4` esperamos que termine de instalar y por ultimo le damos en [cerrar](screenshots/screenshot28.png)
+  `Paso 2` Ejecuta el instalador y sigue las instrucciones ![predeterminadas.](screenshots/screenshot26.png)
+  `Paso 3` al dar en *instalar* nos pedira permiso para instalacion le damos en *SI* y comenzara la ![instalacion](screenshots/screenshot27.png)
+  `Paso 4` esperamos que termine de instalar y por ultimo le damos en ![cerrar](screenshots/screenshot28.png)
    
  **Verificación:** [Cómo comprobar que funciona]
 `Paso 1` Despues de instalar podemos abrir la terminal integrada VS Code o una ventana de PowerShell y ejecutamos:
@@ -184,10 +184,10 @@ El .NET SDK (Software Development Kit) contiene el compilador, las herramientas 
 **Extensiones esenciales:**
 - **Soporte oficial para C#**: 
  `Paso 1` Abre Visual Studio Code.
- `Paso 2` Ve al menú de Extensiones o presiona *Ctrl+Shift+X* (Windows/Linux) o *Cmd+Shift+X* [(Mac).](screenshots/screenshot30.png)
+ `Paso 2` Ve al menú de Extensiones o presiona *Ctrl+Shift+X* (Windows/Linux) o *Cmd+Shift+X* ![(Mac).](screenshots/screenshot30.png)
  `Paso 3`En la barra de búsqueda escribe el nombre de la extensión. Por ejemplo:
          C# (la oficial de Microsoft)
- Haz clic en la extensión que aparece en los resultados y Presiona [Instalar.+](screenshots/screenshot31.png)
+ Haz clic en la extensión que aparece en los resultados y Presiona ![Instalar.+](screenshots/screenshot31.png)
 
 **Configuraciones específicas para C#:** 
 [Describir las configuraciones que se aplicaron, como formateo automático, intellisense, o configuraciones del compilador]
@@ -508,19 +508,19 @@ Escribir debug y seleccionar la configuración deseada.
 
 **Proceso de instalación:**
   **Descarga:** 
-`Paso 1` [Ir a la pagina *https://visualstudio.microsoft.com/es/downloads/?cid=learn-onpage-download-install-visual-studio-page-cta*,](screenshots/screenshot62.png).
+`Paso 1` ![Ir a la pagina *https://visualstudio.microsoft.com/es/downloads/?cid=learn-onpage-download-install-visual-studio-page-cta*,](screenshots/screenshot62.png).
 `Paso 2` Decida qué versión y edición de Visual Studio se va a instalar. Las opciones más comunes son:
   La versión más reciente de Visual Studio 2022 hospedada en servidores de Microsoft. Para instalar esta versión, seleccione el botón siguiente y elija la edición que desee. El instalador descarga un pequeño cargador de arranque en su [carpeta Descargas.]
   **Opciones del instalador:** 
  ``Paso 3``En la carpeta Descargas, haga doble clic en el programa de instalación denominado VisualStudioSetup.exe, o denominado algo como vs_community.exe, para iniciar la instalación.
 
-Si ve un aviso de Control de cuentas de usuario, seleccione *Sí*. El cuadro de diálogo le pide que confirme los términos de licencia de Microsoft y la Declaración de privacidad de Microsoft . Seleccione [*Continuar.*](screenshots/screenshot64.png)
+Si ve un aviso de Control de cuentas de usuario, seleccione *Sí*. El cuadro de diálogo le pide que confirme los términos de licencia de Microsoft y la Declaración de privacidad de Microsoft . Seleccione ![*Continuar.*](screenshots/screenshot64.png)
 Se abre el Instalador de Visual Studio. También puede instalar cualquier producto que aparezca en la pestaña Disponible del instalador de Visual Studio.
 
 ``Paso 4``Elegir cargas de trabajo
 Después de instalar el Instalador de Visual Studio, puede usarlo para personalizar la instalación seleccionando los conjuntos de características o cargas de trabajo, que desee. Así es como.
 
-Seleccione la carga de trabajo que desee en el [instalador de Visual Studio.](screenshots/screenshot65.png)
+Seleccione la carga de trabajo que desee en el ![instalador de Visual Studio.](screenshots/screenshot65.png)
 Revise los resúmenes de carga de trabajo para decidir qué carga de trabajo admite las características que necesita. Por ejemplo, elija la carga de trabajo de ASP.NET y desarrollo web para editar páginas web de ASP.NET con Vista Previa en Vivo o crear aplicaciones web responsivas con Blazor. Puede elegir entre las cargas de trabajo de escritorio, & móvil, o para desarrollar aplicaciones multiplataforma con C#, o proyectos de C++ que tienen como destino C++20.
 Después de elegir las cargas de trabajo que desee, seleccione Instalar.
 A continuación, aparece una pantalla de estado que muestra el progreso de la instalación de Visual Studio.
@@ -624,7 +624,7 @@ Para confirmar que Visual Studio está correctamente instalado y listo para C#:
 *Metodo 2*
 ``Paso 1``Desde el instalador
 ``PASO 2``Abre el Instalador de Visual Studio.
-``PASO 3``En la pestaña Instalados, verifica que la edición esté [instalada y actualizada.](screenshots/screenshot69.png)
+``PASO 3``En la pestaña Instalados, verifica que la edición esté ![instalada y actualizada.](screenshots/screenshot69.png)
 
 ### Desarrollo con C#
 
@@ -761,7 +761,7 @@ Complete los pasos siguientes para descargar e instalar la carga de trabajo de P
 
   ``Paso 1`` Descargue y ejecute el instalador de Visual Studio más reciente para Windows. La    compatibilidad con Python está presente en la versión 15.2 y posteriores. Si ya tiene Visual Studio instalado, abra Visual Studio y ejecute el instalador seleccionando Tools>Obtener herramientas y características.
 
-  ``Paso 2``El instalador proporciona una lista de cargas de trabajo que son grupos de opciones relacionadas para áreas de desarrollo específicas. Para Python, elija la carga de trabajo Desarrollo de Python y [seleccione Instalar](screenshots/screenshot75.png)
+  ``Paso 2``El instalador proporciona una lista de cargas de trabajo que son grupos de opciones relacionadas para áreas de desarrollo específicas. Para Python, elija la carga de trabajo Desarrollo de Python y ![seleccione Instalar](screenshots/screenshot75.png)
   De forma predeterminada, la carga de trabajo de Python se instala para todos los usuarios de un equipo en la siguiente ubicación:
 
     %ProgramFiles%\Microsoft Visual Studio\<VS_version>\<VS_edition>Common7\IDE\Extensions\Microsoft\Python
@@ -778,7 +778,7 @@ Compruebe rápidamente la instalación de compatibilidad con Python:
 ``Paso 2``Seleccione Alt + I para abrir la ventana interactiva de Python.
 
 ``Paso 3``En la ventana, escriba la instrucción 2+2.
-[La salida de la instrucción 4 se muestra en la ventana. Si no ve la salida correcta, vuelva a comprobar los pasos.](screenshots/screenshot76.png).
+![La salida de la instrucción 4 se muestra en la ventana. Si no ve la salida correcta, vuelva a comprobar los pasos.](screenshots/screenshot76.png).
 
 
 ### Configuración en VS Code
