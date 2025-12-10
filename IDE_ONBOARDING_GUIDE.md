@@ -244,326 +244,218 @@ Un ejemplo básico:
     ]
   }  
 
-**Debugging básico:**
-`Establecer un punto de interrupción e iniciar el depurador`
-*Introducción a los puntos de interrupción en el depurador de Visual Studio*
-Los puntos de interrupción son una de las técnicas de depuración más relevantes dentro de las herramientas que usan los desarrolladores. Puedes definir puntos de interrupción en cualquier lugar donde desees pausar la ejecución del depurador. Por ejemplo, tal vez quieras revisar el estado de las variables o inspeccionar la pila de llamadas en un punto específico.
+**Debugging básico en Visual Studio**
 
-*Establecimiento de puntos de interrupción en el código fuente*
-Es posible colocar un punto de interrupción en cualquier línea de código que sea ejecutable. Por ejemplo, observa este simple fragmento de código en C# que crea un bucle básico.
+`1. Puntos de interrupción (Breakpoints)`
 
-C#
-int testInt = 3;
+Definición: Marcadores que detienen la ejecución en una línea específica para inspeccionar variables, pila de llamadas, etc.
 
-for (int i = 0; i < 10; i++)
-{
-  testInt += i;
-}
+Dónde se pueden establecer: Líneas ejecutables (asignaciones, instrucciones dentro de bucles, llamadas a métodos).
 
+Cómo agregar:
 
-Es posible colocar un punto de interrupción en una línea donde se asignen variables (por ejemplo, int testInt = 3), dentro de un bucle for o en cualquier instrucción dentro de ese bucle. No se pueden establecer puntos de interrupción en firmas de métodos, declaraciones de espacios de nombres o clases, ni en declaraciones de variables que no incluyan asignación o carezcan de métodos getter o setter.
+Clic en el margen izquierdo junto a la línea
 
-Cómo agregar un punto de interrupción en el código fuente
+Presionar F9
 
-Haga clic en el margen izquierdo junto a la línea de código deseada.
+Menú: Depurar > Alternar punto de interrupción
 
-También puede seleccionar la línea y presionar F9.
+Visualización: Círculo rojo en el margen; flecha amarilla indica la línea actual.
 
-Otra opción es ir a Depurar > Alternar punto de interrupción o hacer clic derecho sobre la línea y elegir Punto de interrupción > Insertar punto de interrupción.
+Gestión avanzada:
 
-El punto de interrupción se mostrará como un círculo rojo en el margen izquierdo.
+Deshabilitar/Habilitar: clic derecho > Deshabilitar/Habilitar punto de interrupción
 
-En la mayoría de los lenguajes, incluido C#, Visual Studio resalta automáticamente el punto de interrupción y la línea de ejecución actual. En algunos lenguajes, como C++, donde este resaltado no está activado por defecto, se puede habilitar manualmente para ver claramente el punto de interrupción y la línea en ejecución.
+Condicionales, acciones, etiquetas, exportación/importación: clic derecho > opciones
 
-Abre el cuadro de diálogo Opciones de herramientas> expande la sección Depuración y activa la casilla Resaltar toda la línea de origen para los puntos de interrupción y la instrucción actual (solo C++).. [Seleccione *Aceptar* para aplicar el cambio.](screenshots/screenshot32.png)
+Grupos: organizar puntos de interrupción por escenario
 
-`Ejecutar y depurar`
-Para depurar, presione *F5* o seleccione *Depurar>Iniciar depuración*.
+`2. Puntos de interrupción desde ventanas del depurador`
 
-Al depurar, la ejecución se detiene en el punto de interrupción, antes de que se ejecute el código de esa línea. El símbolo del punto de interrupción muestra una flecha amarilla.
+Pila de llamadas: Ctrl + Alt + C, clic derecho > Insertar punto de interrupción en funciones.
 
-En el punto de interrupción del ejemplo siguiente, el valor de testInt sigue siendo 3. Por lo tanto, el valor no ha cambiado desde que se inicializó la variable (se estableció en un valor de 3) porque la instrucción en amarillo aún no se ha [ejecutado.](screenshots/screenshot33.png)
-Cuando el depurador se detiene en el punto de interrupción, se puede consultar el estado actual de la aplicación, incluidos los valores de variable y la pila de llamadas.
-[Por ejemplo, en la ilustración siguiente, puede ver el valor de testInt en una sugerencia de datos y en la ventana de *variables locales.*](screenshots/screenshot34.png)
-Estas son algunas instrucciones generales para trabajar con puntos de interrupción.
+Ventana desensamblado: Ctrl + Alt + D, clic en margen o F9 para instrucciones específicas.
 
-El punto de interrupción es un comando de alternancia. Puede hacer clic en él, presionar F9, o bien usar *Depurar>Alternar punto de interrupción para eliminarlo o volver a insertarlo.*
+`3. Iniciar depuración`
 
-Para deshabilitar un punto de interrupción sin eliminarlo, mantenga el puntero sobre él o haga clic con el botón derecho y seleccione *Deshabilitar punto de interrupción*. Los puntos de interrupción deshabilitados aparecen como puntos vacíos en el margen izquierdo o en la ventana *Puntos de interrupción*. Para volver a habilitar un punto de interrupción, mantenga el puntero sobre él o haga clic con el botón derecho y seleccione *Habilitar punto de interrupción*.
+Presionar F5 o ir a Depurar > Iniciar depuración
 
-Establezca condiciones y acciones, agregue y edite etiquetas o exporte un punto de interrupción; para ello, haga clic con el botón derecho en él y seleccione el comando adecuado, o mantenga el puntero sobre él y seleccione el icono Configuración.
+La ejecución se detiene en los breakpoints y permite inspeccionar variables y pila de llamadas.
 
-*Tipos de puntos de interrupción*
-Visual Studio admite diferentes tipos de puntos de interrupción para admitir diferentes escenarios de depuración, como puntos de interrupción condicionales que solo se activan en función de criterios especificados. Para obtener más información, consulte Utilice el tipo correcto de punto de interrupción.
+`4. Inspección de variables`
 
-*Administrar puntos de interrupción en la ventana Puntos de interrupción*
+Opciones:
 
-En la ventana *Puntos de interrupción* se pueden ver y administrar todos los puntos de interrupción de la solución. Esta ubicación centralizada es especialmente útil en una solución grande o para escenarios de depuración complejos en los que los puntos de interrupción son críticos.
+Hover sobre variable en editor para ver valor
 
-En la ventana *Puntos de interrupción* se pueden buscar, ordenar, filtrar, habilitar/deshabilitar o eliminar puntos de interrupción. También puede establecer condiciones y acciones, o agregar una nueva función o punto de interrupción de datos.
+Ventanas del depurador: Automático, Variables locales, Inspección (Watch)
 
-Para abrir la ventana *Puntos de interrupción*, seleccione *Depurar>Ventanas>Puntos de interrupción*, o bien presione [*CTRL+Alt+B*.](screenshots/screenshot35.png)
-Para seleccionar las columnas que se van a mostrar en la ventana Puntos de interrupción, seleccione Mostrar columnas. Seleccione un encabezado de columna para ordenar la lista de puntos de interrupción por esa columna.
+Visualizadores: cadenas largas, objetos complejos, colecciones
 
-*Etiquetas de puntos de Interrupción*
-Puede usar etiquetas para ordenar y filtrar la lista de puntos de interrupción en la ventana de 'Puntos de interrupción' *y*.
+Valores devueltos de métodos: en línea o ventanas Autos
 
-  -Para agregar una etiqueta a un punto de interrupción, haga clic con el botón derecho en el punto de interrupción en el código fuente o en la ventana *Puntos de interrupción* y, después, seleccione *Editar etiquetas*. Agregue una etiqueta nueva o elija una existente y, después, seleccione *Aceptar*.
+Watch / Inspección: observar variables o expresiones específicas
 
-  -Para ordenar la lista de puntos de interrupción en la ventana *Puntos de interrupción*, seleccione *Etiquetas, Condiciones* u otros encabezados de columna. Para seleccionar las columnas que desea mostrar, seleccione *Mostrar columnas* en la barra de herramientas.
+Copia y edición: doble clic sobre el valor en ventanas Autos o Locals
 
-*Grupos de puntos de Interrupción*
-En escenarios de depuración complejos, es posible que desee crear grupos de puntos de interrupción para organizar los puntos de interrupción. Esto le permite habilitar y deshabilitar rápidamente agrupaciones lógicas de puntos de interrupción, en función del escenario actual que está intentando depurar.
+`5. Ventanas de depuración`
+Ventana	Descripción	Atajo
+Automático	Variables alrededor de la línea actual	Ctrl + Alt + V, A
+Variables locales	Variables del ámbito actual	Alt + 4
 
-Puede crear puntos de interrupción en la ventana de *Puntos de interrupción* seleccionando *Nuevo > Grupo de puntos de interrupción* y proporcionando un nombre para el grupo. Para agregar un punto de interrupción a un grupo, haga clic con el botón derecho en el punto de interrupción y elija *Agregar al grupo de puntos de interrupción><nombre de grupo>*. O bien, arrastre y coloque los puntos de [interrupción en el grupo deseado.](screenshots/screenshot36.png)
+Expandir objetos y matrices
 
-Para establecer un grupo de puntos de interrupción predeterminado, haga clic con el botón derecho en un grupo y seleccione *Establecer como grupo de puntos de interrupción predeterminado*. Al establecer un grupo de puntos de interrupción predeterminado, los puntos de interrupción recién creados se agregan automáticamente al grupo.
+Cambiar formato numérico: clic derecho > Presentación hexadecimal
 
-*Exportar e importar puntos de Interrupción*
-Para guardar o compartir el estado y la ubicación de los puntos de interrupción, puede exportarlos o importarlos.
-A partir de la versión 17.12 Preview 3 de Visual Studio 2022, los grupos de puntos de interrupción también se incluyen con los puntos de interrupción exportados e importados.
-  --Para exportar un solo punto de interrupción a un archivo XML, haga clic con el     botón derecho en el punto de interrupción en el código fuente o en la ventana *Puntos de interrupción* y, luego, seleccione *Exportar* o *Exportar seleccionados*. Seleccione una ubicación de exportación y, a continuación, seleccione *Guardar*. La ubicación predeterminada es la carpeta de la solución.
-  --Para exportar varios puntos de interrupción, active las casillas situadas junto a los puntos de interrupción en la ventana *Puntos de interrupción* o especifique los criterios de búsqueda que quiera en el campo *Buscar*. Seleccione el icono *Exportar todos los puntos de interrupción que coinciden con el criterio de búsqueda actual* y guarde el archivo.
-  --Para exportar todos los puntos de interrupción, desactive todas las casillas y deje el campo *Buscar* en blanco. Seleccione el icono *Exportar todos los puntos de interrupción que coinciden con el criterio de búsqueda actual* y guarde el archivo.
-  --Para importar puntos de interrupción, seleccione el icono *Importar puntos de interrupción de un archivo* en la ventana *Puntos de interrupción*, vaya a la ubicación del archivo XML y seleccione *Abrir*.
+Búsqueda de variables en Autos/Locals
 
-*Establecer puntos de interrupción desde ventanas del depurador*
-También se pueden establecer puntos de interrupción en las ventanas del depurador *Pila de llamadas* y *Desensamblado*.
+`6. Visualizadores`
 
-*Establecer un punto de interrupción en la ventana Pila de llamadas*:
-Para interrumpir la ejecución en la instrucción o línea a la que una función de llamada regresa, se puede establecer un punto de interrupción en la ventana *Pila de llamadas*.
-*Para establecer un punto de interrupción en la ventana Pila de llamadas:*
+Visualizador de cadenas: textos largos, XML, HTML, JSON
 
-  --Para abrir la ventana *Pila de llamadas*, la depuración debe estar en pausa. Seleccione *Depurar>Ventanas>Pila de llamadas* o presione *Ctrl+Alt+C*.
+Visualizador de objetos tabulares: colecciones .NET (DataSet, IEnumerable)
 
-  --En la ventana *Pila de llamadas*, haga clic con el botón derecho en la función de llamada y seleccione *Punto de interrupción>Insertar punto de interrupción* o presione *F9*.
+Acceso: Hover sobre variable compatible → icono de lupa
 
-    Aparecerá un símbolo de punto de interrupción junto al nombre de la llamada de función en el margen izquierdo de la pila de llamadas.
+Tip práctico: Concéntrate en los breakpoints, inspección de variables y ventana Locals/Watch para depuración diaria.
 
-El punto de interrupción de la pila de llamadas se muestra en la ventana Puntos de Interrupción como una dirección de memoria que apunta a la siguiente instrucción ejecutable de la función.
-
-Cuando se alcanza, el depurador detiene la ejecución en esa instrucción. Para más detalles sobre la pila de llamadas, consulte Cómo usar la ventana pila de llamadas.
-Si desea seguir visualmente los puntos de interrupción mientras se ejecuta el código, consulte Asignar métodos en la pila de llamadas durante la depuración.
-
-Establecer un punto de interrupción en la ventana Desensamblado
-
-Para abrir la ventana Desensamblado, la depuración debe estar en pausa. Vaya a Depurar > Windows > Desensamblado o presione Ctrl+Alt+D.
-
-Dentro de la ventana Desensamblado, puede hacer clic en el margen izquierdo junto a la instrucción que desea interrumpir. También es posible seleccionarla y presionar F9, o hacer clic derecho y elegir Punto de interrupción > Insertar punto de interrupción.
-
-`Inspección de variables`
-*Inspección de variables y valores devueltos en el depurador de Visual Studio*
-Al depurar un problema, normalmente se busca comprobar si las variables contienen los valores que se esperan en un determinado estado de la aplicación. Una de las herramientas más útiles del depurador es la capacidad de inspeccionar estas variables.
-
-Este artículo explica cómo examinar variables y consultar los valores devueltos utilizando el depurador de Visual Studio. Existen varias formas prácticas de hacerlo, entre ellas:
-
-En el editor de código: puede ver sugerencias de datos y valores devueltos directamente en línea.
-
-En las ventanas del depurador (Automático, Variables locales e Inspección): puede consultar los valores de las variables.
-
-Mediante visualizadores: puede examinar cadenas largas u objetos complejos de .NET.
-
-Estas funciones solo están disponibles mientras la aplicación se encuentra en modo de depuración. Para más información sobre cómo iniciar la depuración y pausar la ejecución, consulte Iniciar la depuración y entrar en modo de interrupción.
-
-*Visualización de variables en el editor de Código*
-A menudo, al depurar, necesita una forma rápida de comprobar los valores de propiedad de los objetos en el editor de código y la información sobre datos es una buena forma de hacerlo.
-Cuando el depurador está pausado, pase el ratón sobre un objeto y verá su valor o su valor de [propiedad predeterminado.](screenshots/screenshot37.png)
-Si la variable tiene propiedades, puede expandir el objeto para ver todas sus propiedades.
-Para obtener información detallada sobre el uso de sugerencias de datos, consulte Ver valores de datos en sugerencias de datos.
-
-*Visualizar valores de retorno en línea de llamadas a métodos en el editor de código*
-En el código de .NET y C++, puede examinar los valores devueltos al pasar o salir de una llamada de método, lo que puede ser útil cuando el valor devuelto no se almacena en una variable local. Un método se puede usar como parámetro o como valor devuelto de otro método.
-A partir de la versión 17.12 de Visual Studio 2022, puede ver los valores devueltos de las llamadas de método en línea y no solo en la [ventana Autos.](screenshots/screenshot38.png)
-Con Copilot habilitado, también puede obtener asistencia específica relacionada con el valor de retorno en línea mediante el botón Preguntar a Copilot que aparece en la sugerencia de datos para el [valor de retorno.](screenshots/screenshot39.png)
-
-*Establecimiento de una inspección de variables*
-Puede usar una ventana Inspección para especificar una variable (o una expresión) que quiera supervisar.
-Durante la depuración, haga clic derecho sobre un objeto en el editor de código y elija Agregar Vigilancia. [Se abre una ventana de inspección.](screenshots/screenshot400.png)
-
-En este ejemplo, se ha establecido una inspección para el objeto y puede ver cómo cambia su valor conforme avanza en el depurador. A diferencia de las otras ventanas de variables, las ventanas *Watch* siempre muestran las variables que estás observando (están atenuadas cuando están fuera del ámbito).
-Para obtener más información, vea Establecimiento de una inspección con las ventanas Inspección e Inspección rápida.
-
-*Visualización de valores devueltos de consultas LINQ*
-Mientras esté en pausa en el depurador, puede mantener el puntero sobre cláusulas individuales o segmentos de la consulta LINQ para evaluar el valor devuelto de la consulta inmediata
-Si tiene Copilot, puede obtener ayuda de inteligencia artificial mientras mantiene el puntero sobre la consulta LINQ. Seleccione el icono de *GitHub Copilot* al final de la información sobre datos para analizar la consulta con Copilot. A continuación, Copilot explica la sintaxis de la consulta LINQ y aclara por qué obtiene el resultado especificado.
-
-*Obtención de ayuda para la inteligencia artificial*
-Si tiene Copilot, puede obtener asistencia de inteligencia artificial mientras examina las variables en el editor de código o en las ventanas de Autos o Locales. Mientras está depurando, haga clic con el botón derecho en una variable y use el botón Preguntar a CopilotCaptura de pantalla del botón *Preguntar a Copilot*. En este escenario, Copilot ya conoce el contexto de su pregunta, por lo que no es necesario proporcionar contexto en el chat. Para obtener más información, consulte Depurar con Copilot.
-
-*Inspección de variables en las ventanas (Automático y Variables locales)*
-Las ventanas Automático y Variables locales muestran valores de variables durante la depuración. Las ventanas solo están disponibles durante una sesión de depuración. La ventana Autos muestra las variables utilizadas en torno a la declaración actual donde el depurador está pausado. La ventana Variables locales muestra las variables definidas en el ámbito local, que suele ser la función o el método actuales.
-
-  --Para abrir la ventana *Automático*, seleccione *Depurar>Ventanas>Automático*, o bien presione *Ctrl+Alt+V>A* durante la depuración.
-
-  --La ventana de *Autos* está disponible para los lenguajes de código C#, Visual Basic, C++, y Python, pero no para JavaScript o F#.
-
-  --Para abrir la ventana Variables locales, seleccione Depurar>Ventanas>Variables locales, o bien presione Alt+4 durante la depuración.
-
-Las matrices y objetos expandibles aparecen en las ventanas de Automáticos y Locales. Seleccione la flecha situada a la izquierda de un nombre de variable para expandir la vista para mostrar campos y propiedades. Este es un ejemplo de un objeto System.IO.FileStream en la ventana de [variables locales:](screenshots/screenshot42.png)
-Un valor rojo en la ventana *Locales* o *Automático* significa que el valor ha cambiado desde la última evaluación. El cambio podría provenir de una sesión de depuración anterior, o podría ser porque usted ha cambiado el valor en la ventana.
-El formato numérico predeterminado en las ventanas del depurador es decimal. Para cambiarlo a hexadecimal, haga clic con el botón derecho en la ventana *Variables locales* o *Automático*, y seleccione *Presentación hexadecimal*. El cambio afecta a todas las ventanas del depurador.
-
-*Editar valores de variable en la ventana Autos o Variables locales*
-Para modificar los valores de la mayoría de las variables en las ventanas Automático o Variables locales, basta con hacer doble clic sobre el valor y escribir el nuevo.
-También es posible ingresar expresiones como a + b; el depurador admite la mayoría de las expresiones válidas del lenguaje.
-En el caso de código nativo de C++, puede ser necesario especificar el contexto de una variable. Para más detalles, consulte Operador de contexto (C++).
-
-*Búsqueda en las ventanas Automático o Variables locales*
-Puede buscar palabras clave en las columnas Nombre, Valor y Tipo de la ventana *Autos* o de la ventana *Locals* mediante la barra de búsqueda situada encima de cada ventana. Presione ENTRAR o seleccione una de las flechas para ejecutar una búsqueda. Para cancelar una búsqueda en curso, seleccione el icono "x" en la barra de búsqueda.
-Use las flechas izquierda y derecha (Mayús+F3 y F3, respectivamente) para desplazarse por las [coincidencias encontradas.](screenshots/screenshot43.png)
-Para que la búsqueda sea más o menos exhaustiva, use la lista desplegable *Búsqueda más profunda* en la parte superior de la ventana *Automóviles* o *Locales* para seleccionar cuántos niveles de profundidad desea buscar en objetos anidados.
-
-*Abrir un visualizador para inspeccionar variables*
-Al depurar en Visual Studio, es posible examinar cadenas extensas u objetos complejos mediante visualizadores integrados que facilitan la inspección de los datos. Por ejemplo:
-
-Visualizador de cadenas: permite mostrar textos largos, así como contenido en XML, HTML y JSON que no cabría en la ventana de información o en el depurador de datos. También resulta útil para detectar cadenas mal formadas. Para más detalles, consulte Ver cadenas en un visualizador de cadenas.
-
-Visualizadores DataSet e IEnumerable: presentan colecciones de objetos .NET en un formato tabular, lo que simplifica su análisis. Para obtener más información, consulte Visualizadores tabulares en objetos de Visual Studio.
-
-Estos visualizadores se pueden usar en las ventanas Automático, Sugerencias de datos y otras del depurador.
-
-Para abrir el visualizador, la depuración debe estar en pausa. Mantenga el puntero sobre una variable que tenga un valor de visualizador compatible y seleccione el icono de [lupa VisualizerIcon.](screenshots/screenshot44.png).
-Abrir visualizador de cadenas
-
-> **Enfoque práctico**: Concentra tu documentación en las funcionalidades básicas que usarás día a día.
-
-### Flujo de Trabajo con C#
-
-**Creación de proyectos:**
-
-`Paso 1`Abre una terminal en la carpeta donde deseas crear el [proyecto y ejecuta:]
-
-    dotnet new console -n HolaMundo
-
-  Esto crea una carpeta llamada HolaMundo con una estructura [básica de proyecto C#.]
-
-`Paso 2`Abrir en Visual Studio Code, En la terminal, navega a la [carpeta del proyecto:]
-
+Flujo de trabajo básico con C#
+Creación de proyecto
+dotnet new console -n HolaMundo
 cd HolaMundo
 code .
 
-**Estructura de proyecto:**
-``csharp
 
-La estructura generada por defecto es:
+Esto crea la carpeta HolaMundo con estructura básica:
 
 HolaMundo/
 ├── bin/
 ├── obj/
 ├── Program.cs
-└── HolaMundo.csproj.
+└── HolaMundo.csproj
 
-// Incluir aquí un ejemplo del código desarrollado
+Ejemplo de código Program.cs
+using System;
 
-    using System
+namespace HolaMundo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("¡Hola Mundo!");
+        }
+    }
+}
 
-  namespace HolaMundo
-  {
-      class Program
-      {
-         static void Main(string[] args)
-         {
-             Console.WriteLine("¡Hola Mundo!");
-         }
-      }
-  }
+*Comentarios sobre decisiones tomadas*
 
-// Comentarios sobre las decisiones tomadas
-Comentarios sobre las decisiones tomadas:
+Se usa el namespace HolaMundo para organizar el código.
 
-  --Se usa el espacio de nombres HolaMundo para mantener el código organizado.
-  --El método Main es el punto de entrada del programa.
-  //--Console.WriteLine() imprime texto en la consola.
+El método Main es el punto de entrada del programa.
 
-**Compilación y ejecución:**
+Console.WriteLine() imprime texto en la consola.
 
-`Depuración de código en Visual Studio Code`
-Visual Studio Code proporciona un soporte completo para depurar distintos tipos de aplicaciones. De manera nativa, VS Code permite depurar JavaScript, TypeScript y Node.js. Además, el Marketplace de Visual Studio ofrece numerosas extensiones que amplían la depuración a otros lenguajes y entornos de ejecución.
+**Depuración de código en VS Code**
 
-En este artículo se explorarán las funcionalidades de depuración que ofrece VS Code y se explicará cómo iniciar una sesión de depuración. También se mostrará cómo utilizar Copilot en VS Code para facilitar la configuración y el arranque de la depuración.
+`Lenguajes soportados`
 
-`Interfaz de usuario del depurador`
-[El siguiente diagrama muestra los componentes principales de la interfaz de usuario del depurador]
-  *1* Vista de ejecución y depuración : muestra toda la información relacionada con la ejecución, la depuración y la gestión de la configuración de depuración.
-  *2* Barra de herramientas de depuración : tiene botones para las acciones de depuración más comunes.
-  *3* Consola de depuración : permite ver e interactuar con la salida del código que se ejecuta en el depurador.
-  *4* Barra lateral de depuración : durante una sesión de depuración, le permite interactuar con la pila de llamadas, los puntos de interrupción, las variables y las variables de observación.
-  *5* Menú Ejecutar : contiene los comandos de ejecución y depuración más comunes.
+Nativo: JavaScript, TypeScript, Node.js
 
-`Antes de comenzar la depuración`
-  *1* Instala una extensión de depuración desde Visual Studio Marketplace para tu lenguaje o entorno de ejecución.
+Otros lenguajes: mediante extensiones desde el Marketplace
 
-VS Code incluye soporte integrado para la depuración de JavaScript, TypeScript y Node.js.
+Copilot puede generar automáticamente la configuración de depuración (launch.json) para tu proyecto.
 
-*2* Define una configuración de depuración para tu proyecto.
-Para aplicaciones sencillas, VS Code intenta ejecutar y depurar el archivo activo. Para aplicaciones más complejas o escenarios de depuración, es necesario crear un launch.jsonarchivo para especificar la configuración del depurador. Obtenga más información sobre cómo crear una configuración de depuración .
+`Interfaz de depuración`
+Elemento	Función
+Vista Ejecutar y depurar	Información general sobre ejecución y depuración, configuración de launch.json
+Barra de herramientas de depuración	Botones para acciones comunes: iniciar, pausar, detener, paso a paso
+Consola de depuración REPL	Evaluación de expresiones mientras el código está detenido
+Barra lateral de depuración	Visualizar pila de llamadas, breakpoints y variables
+Menú Ejecutar	Accesos directos a comandos de ejecución y depuración
+Antes de comenzar la depuración
 
-    Consejo
-    Copilot en VS Code puede ayudarte a generar el launch.jsonarchivo. Para obtener más información, consulta Usar Copilot para generar configuraciones de depuración .
+Instalar la extensión adecuada si no es JS/TS/Node.
 
-*3* Establece puntos de interrupción en tu código.
-Un punto de interrupción es un marcador que puedes establecer en una línea de código para indicarle al depurador que pause la ejecución cuando llegue a esa línea. Puedes establecer puntos de interrupción haciendo clic en el margen junto al número de línea en el editor.
-Para obtener más información sobre los puntos de interrupción, consulte la sección "Trabajar con puntos de interrupción".
+Definir la configuración de depuración:
 
-`Iniciar una sesión de depuración`
-Para iniciar una sesión de depuración en VS Code, siga los siguientes pasos:
+Proyectos simples: VS Code depura el archivo activo
 
-`Paso 1` Abre el archivo que contiene el código que deseas depurar.
+Proyectos complejos: crear launch.json (Copilot puede ayudar)
 
-`Paso 2` Inicie una sesión de depuración con la tecla F5 o seleccione Ejecutar y depurar en la vista Ejecutar y [depurarworkbench.view.debug ( ).](screenshots/screenshot51.png)
-Para escenarios de depuración más complejos, como la conexión a un proceso en ejecución, es necesario crear un launch.jsonarchivo para especificar la configuración del depurador. Obtenga más información sobre las configuraciones de depuración .
+Establecer puntos de interrupción: clic en el margen junto al número de línea o F9
 
-`Paso 3` Elija el depurador que desea utilizar de la lista de depuradores disponibles.
-VS Code intenta ejecutar y depurar el archivo activo. En el caso de Node.js, VS Code busca un startscript en el package.jsonarchivo para determinar el punto de entrada de la aplicación.
+`Iniciar sesión de depuración`
 
-`Paso 4` Cuando se inicia una sesión de depuración, se muestra el panel CONSOLA DE DEPURACIÓN y muestra la salida de depuración, y la barra de estado cambia de color [(naranja para los temas de color predeterminados).](screenshots/screenshot52.png)
+Abrir el archivo a depurar.
 
-`Paso 5` El estado de depuración en la barra de estado muestra la configuración de depuración activa. Seleccione el estado de depuración para cambiar la configuración de inicio activa y comenzar a depurar sin necesidad de abrir la vista [Ejecutar y depurar.](screenshots/screenshot53.png)
+Presionar F5 o usar Ejecutar y depurar.
+
+Seleccionar el depurador adecuado de la lista disponible.
+
+La barra de estado cambia de color (por defecto, naranja) y muestra la configuración activa.
 
 `Acciones de depuración`
-Una vez iniciada la sesión de depuración, la barra de herramientas de depuración aparece en la parte superior de la ventana. Esta barra contiene acciones para controlar el flujo de la sesión, como recorrer el código paso a paso, pausar la [ejecución y detener la sesión.](screenshots/screenshot54.png)
-
-Acción	Descripción
-  *Continuar / Pausa*
-  F5	-Continuar- : Reanuda la ejecución normal del programa/script (hasta el siguiente punto de interrupción).
-      -Pausa- : Inspecciona el código que se ejecuta en la línea actual y depura línea por línea.
-  *Paso superior*
-  F10	Ejecuta el siguiente método como un solo comando sin inspeccionar ni seguir sus pasos componentes.
-  *Entra en*
-  F11	Ingrese al siguiente método para seguir su ejecución línea por línea.
-  *Salir*
-  Shift+F11	Cuando se encuentre dentro de un método o subrutina, regrese al contexto de ejecución anterior completando las líneas restantes del método actual como si se tratara de un solo comando.
-  *Reiniciar*
-  Ctrl+Shift+F5	Finalice la ejecución actual del programa y vuelva a iniciar la depuración utilizando la configuración de ejecución actual.
-  *Detener*
-  Shift+F5	Finalizar la ejecución del programa actual.
+Acción	Tecla	Descripción
+Continuar / Pausa	F5	Reanuda ejecución hasta siguiente breakpoint / pausa línea actual
+Paso superior (Step Over)	F10	Ejecuta siguiente línea sin entrar en funciones
+Entra en (Step Into)	F11	Entra en funciones o métodos para depurar línea por línea
+Salir (Step Out)	Shift + F11	Sale de la función actual y continúa en el contexto anterior
+Reiniciar	Ctrl + Shift + F5	Detiene y reinicia la depuración con la configuración actual
+Detener	Shift + F5	Finaliza la sesión de depuración
 
 `Consola de depuración REPL`
-Las expresiones se pueden evaluar con la función REPL ( bucle de lectura-evaluación-impresión ) de la consola de depuración . Para abrir la consola de depuración, utilice la acción Consola de depuración en la parte superior del panel de depuración o el comando Ver: Consola de depuración ( Ctrl+Mayús+Y ).
-Las expresiones se evalúan después de pulsar Intro y la consola de depuración REPL muestra sugerencias mientras escribe. Si necesita introducir varias líneas, utilice Mayús+Intro entre ellas y, a continuación, envíe todas las líneas para su evaluación con Intro .
-La entrada de la consola de depuración utiliza el modo del editor activo, lo que significa que admite el resaltado de sintaxis, la sangría, el cierre automático de comillas y otras [características del lenguaje.](screenshots/screenshot55.png)
 
-``Depuración de múltiples objetivos``
-Para escenarios complejos que involucran más de un proceso (por ejemplo, un cliente y un servidor), VS Code admite la depuración de múltiples objetivos. Después de iniciar una primera sesión de depuración, puede iniciar otra. Tan pronto como la segunda sesión esté en funcionamiento, la interfaz de usuario de VS Code cambia al modo de múltiples objetivos .
+Evaluación de expresiones mientras el código está detenido
 
-Las sesiones individuales ahora se muestran como elementos de nivel superior en la vista de [*PILA DE LLAMADAS*.](screenshots/screenshot56.png)
---La barra de herramientas de depuración muestra la sesión actualmente activa [(y todas las demás sesiones están disponibles en un menú desplegable).](screenshots/screenshot57.png)
---Las acciones de depuración (por ejemplo, todas las acciones de la barra de herramientas de depuración) se ejecutan en la sesión activa. La sesión activa se puede cambiar mediante el menú desplegable de la barra de herramientas de depuración o seleccionando un elemento diferente en la vista de la pila de llamadas .
+Abrir: Consola de depuración en el panel de depuración o Ctrl + Shift + Y
 
-**Debugging:**
+Soporta:
 
-``Configuración de depuración de Visual Studio Code``
-Para depurar aplicaciones o en escenarios complejos, es necesario crear un launch.jsonarchivo para especificar la configuración del depurador. Por ejemplo, para especificar el punto de entrada de la aplicación, conectarse a una aplicación en ejecución o establecer variables de entorno.
-Para obtener más información sobre la depuración en VS Code, consulte Depuración en Visual Studio Code .
-    *Consejo*
-    Copilot en VS Code te ayuda a crear una configuración de lanzamiento para tu proyecto. Obtén más información sobre cómo generar una configuración de lanzamiento con Copilot.
+Sugerencias mientras escribes
 
-``Configuraciones de lanzamiento``
-Para aplicaciones sencillas o escenarios de depuración, puedes ejecutar y depurar un programa sin configuraciones de depuración específicas. Usa la tecla F5 y VS Code intentará ejecutar el archivo activo.
-Sin embargo, en la mayoría de los casos de depuración, es necesario crear una configuración de depuración ( configuración de inicio ). Por ejemplo, para especificar el punto de entrada de la aplicación, conectarse a una aplicación en ejecución o establecer variables de entorno. Crear un archivo de configuración de inicio también resulta útil, ya que permite configurar y guardar los detalles de la configuración de depuración con el proyecto.
-VS Code almacena la información de configuración de depuración en un launch.jsonarchivo ubicado en la .vscodecarpeta de su espacio de trabajo (carpeta raíz del proyecto), o en la configuración de usuario o la configuración del espacio de trabajo .
+Múltiples líneas con Shift + Enter
 
-El siguiente fragmento describe una configuración de ejemplo para depurar una aplicación Node.js:
+Resaltado de sintaxis, sangría y cierre automático de comillas según el lenguaje
+
+`Depuración de múltiples objetivos`
+
+Permite depurar varios procesos (por ejemplo, cliente y servidor)
+
+Cada sesión se muestra como elemento de nivel superior en la pila de llamadas
+
+La barra de herramientas de depuración indica la sesión activa
+
+Cambiar sesión activa: menú desplegable de la barra de herramientas o selección en la pila de llamadas
+
+Todas las acciones de depuración se aplican a la sesión activa
+**Debugging en VS Code**
+`1. Configuración de depuración`
+
+Para escenarios complejos o aplicaciones grandes, se necesita un archivo launch.json que especifique:
+
+Punto de entrada de la aplicación
+
+Variables de entorno
+
+Conexión a procesos en ejecución
+
+VS Code guarda la configuración en .vscode/launch.json dentro del proyecto, o en la configuración de usuario/espacio de trabajo.
+
+Para aplicaciones simples, puedes depurar sin configuración, usando F5; VS Code intentará ejecutar el archivo activo.
+
+`2. Creación de launch.json`
+
+Selecciona “Crear un archivo launch.json” en la vista Ejecutar y depurar.
+
+VS Code detecta automáticamente el entorno; si no, selecciona manualmente.
+
+Se crea la carpeta .vscode y el archivo launch.json en tu espacio de trabajo.
+
+Puedes editar el archivo para agregar, modificar o eliminar configuraciones.
+
+Ejemplo de configuración para Node.js:
+
 {
   "version": "0.2.0",
   "configurations": [
@@ -577,47 +469,38 @@ El siguiente fragmento describe una configuración de ejemplo para depurar una a
   ]
 }
 
-VS Code también admite configuraciones de lanzamiento compuestas para iniciar varias configuraciones al mismo tiempo.
-    *Nota*
-    Puedes depurar una aplicación simple incluso si no tienes una carpeta abierta en VS Code, pero no es posible gestionar las configuraciones de inicio ni configurar la depuración avanzada.
 
-``Crea un archivo de configuración de depuración``
-Para crear un launch.jsonarchivo inicial:
+VS Code también soporta configuraciones compuestas para iniciar varias al mismo tiempo.
 
-``Paso 1`` Seleccione "Crear un archivo launch.json" en la vista ["Ejecutar y depurar".](screenshots/screenshot58.png)
-``Paso 2`` VS Code intenta detectar tu entorno de depuración. Si no puede hacerlo, puedes seleccionarlo [manualmente:](screenshots/screenshot59.png)
-En función del entorno de depuración seleccionado, VS Code crea una configuración inicial en el launch.jsonarchivo.
-``Paso 3``En la vista Explorador ( Ctrl+Shift+E ), observe que VS Code creó una .vscodecarpeta y agregó el launch.jsonarchivo a su [espacio de trabajo.](screenshots/screenshot60.png)
-Ahora puedes editar el launch.jsonarchivo para añadir más configuraciones o modificar las existentes.
+`3. Agregar configuraciones`
 
-``Agrega una configuración a launch.json``
-Para agregar una nueva configuración a una existente launch.json, utilice una de las siguientes técnicas:
-  --Pulse el botón Agregar configuración y luego seleccione un fragmento para agregar una configuración predefinida.
-  --Utilice IntelliSense si su cursor se encuentra dentro de la matriz de configuraciones.
-  --Seleccione la opción de menú *Ejecutar > Agregar configuración.*
+Botón “Agregar configuración” en la vista de depuración.
 
-``Generar una configuración de lanzamiento con IA``
-Con Copilot en VS Code, puedes acelerar el proceso de creación de una configuración de lanzamiento para tu proyecto. Para generar una configuración de lanzamiento con Copilot:
+IntelliSense dentro del array de configuraciones del launch.json.
 
-``Paso 1``Abra la vista de chat con Ctrl+Alt+I o seleccione Abrir chat en el menú Copilot de la barra de título.
+Menú: Ejecutar > Agregar configuración.
 
-``Paso 2``Introduce el /startDebuggingcomando de chat para generar una configuración de depuración.
-Como alternativa, también puede ingresar un mensaje personalizado, como generar una configuración de depuración para una aplicación Express #codebase .
-Esto puede resultar útil si tu espacio de trabajo contiene archivos en diferentes idiomas.
+`4. Generar configuración con IA (Copilot)`
 
-      *Nota*
-      La #codebasevariable de chat proporciona a Copilot el contexto de tu proyecto, lo que le ayuda a generar una respuesta más precisa.
+Abrir la vista de chat de Copilot (Ctrl+Alt+I) o desde el menú de la barra de título.
 
-``Paso 3``Aplique la configuración sugerida y luego comience a depurar.
+Usar el comando /startDebugging o un mensaje personalizado (ej. generar configuración de depuración para una app Express).
 
-``Inicie una sesión de depuración con una configuración de lanzamiento.``
-Para iniciar una sesión de depuración con una configuración de lanzamiento:
+Aplicar la configuración sugerida y comenzar la depuración.
 
-``Paso 1`` Seleccione la configuración denominada "Lanzar programa" utilizando el menú desplegable "Configuración" en la vista "Ejecutar y depurar" .
+Nota: Copilot utiliza el contexto de la #codebase para generar configuraciones más precisas.
 
-La lista de configuraciones disponibles coincide con la del [launch.jsonarchivo](screenshots/screenshot61.png)
-``Paso 2`` Inicie su sesión de depuración con F5 o seleccione Iniciar depuración (icono de reproducción) en la vista *Ejecutar y depurar.*
-Como alternativa, puede ejecutar su configuración a través de la paleta de comandos ( Ctrl+Shift+P ) filtrando por *Depurar: Seleccionar e iniciar depuración* o escribiendo 'debug 'y seleccionando la configuración que desea depurar.
+`5. Iniciar sesión de depuración`
+
+Selecciona la configuración deseada en el menú desplegable de Ejecutar y depurar (corresponde al launch.json).
+
+Inicia la depuración con F5 o el icono de reproducción.
+
+Alternativas:
+
+Paleta de comandos (Ctrl+Shift+P) > Depurar: Seleccionar e iniciar depuración
+
+Escribir debug y seleccionar la configuración deseada.
 
 ## Visual Studio - IDE Alternativo
 
@@ -642,53 +525,89 @@ Revise los resúmenes de carga de trabajo para decidir qué carga de trabajo adm
 Después de elegir las cargas de trabajo que desee, seleccione Instalar.
 A continuación, aparece una pantalla de estado que muestra el progreso de la instalación de Visual Studio.
 
-- **Componentes necesarios:** [Componentes específicos para C#]
-- 
-``Paso 5`` Elegir componentes individuales (opcional)
-Si no desea usar la característica Cargas de trabajo para personalizar la instalación de Visual Studio o si desea agregar más componentes que las instalaciones de una carga de trabajo, puede instalar o agregar componentes individuales desde la pestaña Componentes individuales. Elija lo que desee y, [a continuación, siga las indicaciones.](screenshots/screenshot66.png)
-Carga de trabajo principal Desarrollo de escritorio con .NET
-(Incluye C#, .NET Framework, .NET 6/7/8, y Windows Forms/WPF)
-*Componentes opcionales recomendados*
+**Instalación de Visual Studio para C#**
+`1. Selección de componentes`
 
-ASP.NET y desarrollo web (si planeas crear aplicaciones web)
+Carga de trabajo principal recomendada:
+Desarrollo de escritorio con .NET
+Incluye:
 
-Desarrollo multiplataforma con .NET MAUI (si quieres apps móviles y de escritorio)
-Desarrollo de Azure (si usarás servicios en la nube de Microsoft)
-Herramientas de administración de datos (para trabajar con bases de datos SQL)
-    *Consejo:* puedes personalizar los componentes antes de instalar; el instalador mostrará el espacio requerido.
+C#
 
-``Paso 6`` Instalar paquetes de idioma (opcional)
-De forma predeterminada, el programa de instalador intenta coincidir con el idioma del sistema operativo cuando se ejecuta por primera vez. Para instalar Visual Studio en un idioma que elija, vaya a la pestaña Paquetes de idioma del Instalador de Visual Studio y [siga las indicaciones.](screenshots/screenshot667.png)
-Cambiar el idioma del instalador en un símbolo del sistema
-También puede cambiar el idioma predeterminado ejecutando el instalador desde un símbolo del sistema. Por ejemplo, puede forzar que el instalador se ejecute en inglés mediante el siguiente comando:
-Símbolo del sistema de Windows
+.NET Framework y .NET 6/7/8
+
+Windows Forms y WPF
+
+Componentes opcionales recomendados:
+
+ASP.NET y desarrollo web (si crearás aplicaciones web)
+
+Desarrollo multiplataforma con .NET MAUI (apps móviles y de escritorio)
+
+Desarrollo de Azure (si usarás servicios en la nube)
+
+Herramientas de administración de datos (trabajar con bases de datos SQL)
+
+Consejo: Puedes personalizar los componentes antes de instalar; el instalador mostrará el espacio requerido.
+
+`2. Instalación de paquetes de idioma (opcional)`
+
+Por defecto, se usa el idioma del sistema operativo.
+
+Para cambiar el idioma:
+
+Desde el instalador: pestaña Paquetes de idioma
+
+Desde línea de comandos:
 
 vs_installer.exe --locale en-US
 
-El instalador conserva esta configuración al volver a ejecutarla. El instalador admite estas configuraciones regionales del *idioma*:*zh-cn, zh-tw, cs-cz, en-us, es-es, fr-fr, de-de, it-it, ja-jp, ko-kr, pl-pl, pt-br, ru-ruy tr-tr.*
 
-``Paso 7`` Seleccionar la ubicación de instalación (opcional)
-Puede reducir la superficie de memoria de instalación de Visual Studio en la unidad del sistema. Para obtener más información, consulte [Selección de las ubicaciones de instalación.](screenshots/screenshot68.png)
-    *Importante*
-    Puede seleccionar otra unidad para Visual Studio IDE o para la caché de descargas solo al instalar Visual Studio por primera vez. Si ya la instaló y quiere cambiar las unidades, debe desinstalar Visual Studio y volver a instalarla.
-    Si ya ha instalado previamente Visual Studio en el equipo, no podrá cambiar la ruta de acceso de los componentes, las herramientas y los SDK compartidos. Parece atenuado. Todas las instalaciones de Visual Studio comparten esta ubicación.
+Idiomas soportados: zh-cn, zh-tw, cs-cz, en-us, es-es, fr-fr, de-de, it-it, ja-jp, ko-kr, pl-pl, pt-br, ru-ru, tr-tr
 
-``Paso 8`` Iniciar sesión en su cuenta (opcional)
-Aunque no tiene que iniciar sesión, hay muchas ventajas para hacerlo.
-Puede evaluar una evaluación gratuita de Visual Studio Professional o Visual Studio Enterprise durante 30 días. Si inicia sesión, puede ampliar el período de prueba a 90 días. La extensión de prueba de 90 días solo funciona una vez. Para seguir usando Visual Studio después de que finalice un período de prueba, desbloquee con una suscripción en línea de o una clave de producto de .
-Visual Studio Community no requiere que inicie sesión. Sin embargo, si la instalación le pide que inicie sesión periódicamente, inicie sesión para seguir usando Visual Studio Community sin interrupciones.
+`3. Selección de ubicación de instalación (opcional)`
 
-``Paso 9`` Empezar a desarrollar
-Una vez completada la instalación, puede empezar a desarrollar con Visual Studio.
+Se puede elegir otra unidad solo en la primera instalación de Visual Studio.
 
-  --Seleccione el botón Iniciar.
+La ubicación incluye: IDE, caché de descargas, componentes y SDK compartidos.
 
-  --En la ventana de inicio, seleccione Crear un nuevo proyecto.
+Cambiar ubicación después de la instalación requiere desinstalar y reinstalar.
 
-  --En el cuadro de búsqueda de plantillas, escriba el tipo de aplicación que desea crear para ver una lista de plantillas disponibles. La lista de plantillas depende de las cargas de trabajo que haya elegido durante la instalación. Para ver diferentes plantillas, elija diferentes cargas de trabajo. También puede filtrar la búsqueda de un lenguaje de programación específico mediante la lista desplegable *Todos los lenguajes*. También puede filtrar mediante la lista *Todas las plataformas* y la lista *Todos los tipos de proyecto*.
+`4. Iniciar sesión (opcional)`
 
-  --Seleccione Siguiente. Proporcione información en los cuadros de diálogo siguientes y, a continuación, seleccione Crear.
-Visual Studio abre el nuevo proyecto y está listo para codificar.
+Ventajas de iniciar sesión:
+
+Evaluación gratuita de Visual Studio Professional o Enterprise (30 días, ampliable a 90 días)
+
+Mantener uso continuo de Visual Studio Community sin interrupciones
+
+`5. Comenzar a desarrollar`
+
+Selecciona Iniciar en Visual Studio.
+
+Ventana de inicio → Crear un nuevo proyecto
+
+Buscar plantilla de proyecto según tipo de aplicación:
+
+Filtros disponibles: lenguaje, plataforma, tipo de proyecto
+
+Selecciona Siguiente, proporciona la información solicitada y luego Crear
+
+Visual Studio abrirá el proyecto listo para codificación
+
+`Resumen práctico`
+
+Carga de trabajo recomendada: Desarrollo de escritorio con .NET
+
+Componentes opcionales: ASP.NET, .NET MAUI, Azure, SQL
+
+Idioma: Configurable durante la instalación
+
+Ubicación: Configurable solo en primera instalación
+
+Sesión de usuario: Opcional, con beneficios de prueba extendida
+
+Inicio rápido: Crear nuevo proyecto desde la ventana de inicio
 
 - **Verificación:** [Cómo confirmar instalación correcta]
 
@@ -709,81 +628,125 @@ Para confirmar que Visual Studio está correctamente instalado y listo para C#:
 
 ### Desarrollo con C#
 
-**Creación de proyecto:**
+**Creación de un proyecto de C# en Visual Studio**
+`1. Abrir Visual Studio`
 
-Creación de un proyecto
-Para empezar, cree un proyecto de aplicación de C#. El tipo de proyecto incluye todos los archivos de plantilla que necesita.
+Selecciona Crear un nuevo proyecto en la ventana de inicio.
 
-``Paso 1`` Abra Visual Studio y seleccione [Crear un nuevo proyecto en la ventana de inicio.](screenshots/screenshot70.png)
+`2. Seleccionar tipo de proyecto`
 
-``Paso 2`` En la ventana Crear un nuevo proyecto, seleccione C# de la lista desplegable de lenguajes. Elija Windows en la lista de plataformas y Console en la lista de tipos de proyecto.
-Después de aplicar los filtros de idioma, plataforma y tipo de proyecto, seleccione la plantilla aplicación de consola y, a continuación, seleccione Siguiente.
-    *NOTA*
-    Si no ve la plantilla Aplicación de consola, seleccione Instalar más herramientas y [características.](screenshots/screenshot71.png)
-    En Instalador Visual Studio, seleccione la carga de trabajo Desarrollo de escritorio de [.NET.](screenshots/screenshot72.png)
-    Seleccione Modificar en el Instalador de Visual Studio. Es posible que se le pida que guarde su trabajo. Seleccione Continuar para instalar la carga de trabajo.
-Vuelva al paso 2 del procedimiento Crear un proyecto.
+Filtrar por:
 
-``Paso 3`` En la ventana Configurar el nuevo proyecto, escriba Calculator en el cuadro Nombre del proyecto y, a continuación, [seleccione Siguiente.](screenshots/screenshot73.png)
+Lenguaje: C#
 
-``Paso 4`` En la ventana Información adicional seleccione .NET 8.0 para el campo Plataforma de destino. A continuación, [seleccione Crear.](screenshots/screenshot74.png)
+Plataforma: Windows
 
-Visual Studio abre el nuevo proyecto, que incluye el código predeterminado Hello World. Para verlo en el editor, seleccione el archivo de código Program.cs en la ventana Explorador de soluciones, que normalmente se encuentra en el lado derecho de Visual Studio.
-La instrucción de código único llama al método WriteLine para mostrar la cadena literal Hello, World! en la ventana de la consola. Si presiona F5, puede ejecutar el programa predeterminado en modo de depuración. Una vez que la aplicación se ejecuta en el depurador, la ventana de la consola permanece abierta. Presione cualquier tecla para cerrar la ventana de la consola.
+Tipo de proyecto: Console
 
-**Flujo de trabajo básico:**
-  ``Compilación y ejecución``
+Selecciona la plantilla Aplicación de consola y haz clic en Siguiente.
 
-  *Compilación*
+Nota:
+Si no aparece la plantilla:
 
-  Visual Studio compila automáticamente el código antes de ejecutar, pero también puedes hacerlo manualmente:
+Selecciona Instalar más herramientas y características.
 
-     Menú superior → Compilar > Compilar solución (o presiona Ctrl + Shift + B).
+En el Instalador de Visual Studio, activa la carga de trabajo Desarrollo de escritorio de .NET.
 
-  Esto generará los archivos ejecutables en la carpeta:
+Haz clic en Modificar y luego Continuar para instalar.
 
-    /bin/Debug/net8.0/
+Regresa al paso 2.
 
--*Ejecución*
-  Asegúrate de que el archivo principal (por ejemplo, Program.cs) tenga un método Main.
-  Haz clic en el botón Iniciar(o presiona F5) para ejecutar el programa.
-  En una aplicación de consola, aparecerá una ventana con el resultado.
+`3. Configurar el proyecto`
 
-  ``Uso de Solution Explorer``
-  El Solution Explorer (Explorador de soluciones) es el panel de Visual Studio que te permite visualizar, organizar y gestionar todos los archivos y elementos que forman parte de tu solución (solution) y sus proyectos (projects).
-  Lo encontrarás normalmente en el lado derecho del entorno de Visual Studio.
-  Si no está visible, puedes activarlo desde:
+En Nombre del proyecto, escribe: Calculator.
 
-      Menú → Ver → Explorador de soluciones
-      o con el atajo Ctrl + Alt + L.
+Haz clic en Siguiente.
 
-  ``Debugging básico``
-El depurador (Debugger) de Visual Studio permite analizar el comportamiento del programa paso a paso, detectar errores y examinar variables en tiempo real.
+`4. Seleccionar plataforma de destino`
 
-Principales herramientas:
+En Información adicional, selecciona .NET 8.0.
+
+Haz clic en Crear.
+
+`5. Explorar el proyecto`
+
+Visual Studio abre el proyecto con un archivo predeterminado Program.cs.
+
+Este código incluye un Hello, World! usando Console.WriteLine.
+
+`6. Ejecutar y depurar`
+
+Presiona F5 para ejecutar el programa en modo depuración.
+
+La consola mostrará el mensaje Hello, World!.
+
+Presiona cualquier tecla para cerrar la ventana de la consola.
+
+**Flujo de trabajo básico en Visual Studio**
+`1. Compilación`
+
+Visual Studio compila automáticamente el código antes de ejecutar.
+
+También puedes compilar manualmente:
+
+Menú superior → Compilar → Compilar solución
+
+
+o presionando Ctrl + Shift + B.
+
+Los ejecutables se generan en:
+
+/bin/Debug/net8.0/
+
+`2. Ejecución`
+
+Asegúrate de que el archivo principal (por ejemplo, Program.cs) tenga un método Main.
+
+Haz clic en Iniciar o presiona F5 para ejecutar el programa.
+
+En aplicaciones de consola, aparecerá una ventana mostrando los resultados.
+
+`3. Uso del Solution Explorer`
+
+Permite visualizar y gestionar todos los archivos y proyectos dentro de la solución.
+
+Ubicación habitual: lado derecho del entorno.
+
+Si no está visible:
+
+Menú → Ver → Explorador de soluciones
+
+
+o presiona Ctrl + Alt + L.
+
+`4. Debugging básico`
+
+El depurador permite analizar el programa paso a paso y examinar variables en tiempo real.
+
 Herramienta	Descripción	Atajo
-Punto de interrupción (Breakpoint)	Detiene la ejecución en una línea específica.	F9
-Iniciar depuración	Ejecuta el programa en modo debug.	F5
-Paso a paso (Step Over)	Ejecuta la siguiente línea sin entrar a funciones.	F10
-Paso dentro (Step Into)	Entra dentro de una función o método.	F11
-Detener depuración	Finaliza la sesión de depuración.	Shift + F5
-Uso práctico:
-``Paso 1`` Haz clic en el margen izquierdo del editor para colocar un breakpoint (un círculo rojo).
+Punto de interrupción (Breakpoint)	Detiene la ejecución en una línea específica	F9
+Iniciar depuración	Ejecuta el programa en modo debug	F5
+Paso a paso (Step Over)	Ejecuta la siguiente línea sin entrar a funciones	F10
+Paso dentro (Step Into)	Entra dentro de una función o método	F11
+Detener depuración	Finaliza la sesión de depuración	Shift + F5
 
-``Paso 2``Ejecuta el programa en modo depuración (F5).
+*Uso práctico*
 
-``Paso 3``Cuando el programa llegue al breakpoint, se detendrá.
+Haz clic en el margen izquierdo del editor para colocar un breakpoint (círculo rojo).
 
-``Paso 4``En la parte inferior y lateral podrás usar:
+Ejecuta el programa en modo depuración (F5).
 
-  Ventana de Variables locales: muestra el valor de las variables actuales.
+Cuando el programa llegue al breakpoint, se detendrá.
 
-  Ventana Inspección (Watch): permite agregar variables para monitorearlas.
+Observa los paneles del depurador:
 
-  Ventana Pila de llamadas (Call Stack): muestra el orden de ejecución.
+Variables locales: valores de las variables actuales.
 
-``Paso 5``Usa F10 o F11 para avanzar línea por línea y observar los cambios en las variables.
----
+Inspección (Watch): agrega variables a monitorear.
+
+Pila de llamadas (Call Stack): orden de ejecución de funciones.
+
+Avanza línea por línea usando F10 o F11 y observa cómo cambian los valores de las variables.
 
 ## Configuración de Lenguaje Adicional
 
@@ -823,252 +786,184 @@ Compruebe rápidamente la instalación de compatibilidad con Python:
 **Extensiones por lenguaje:**
 
 *Para Java:*
-- **Paquete completo de Java**: Incluye compilación, debugging y gestión de proyectos
+**Java en VS Code**
 
-``Paquete completo de Java (Extension Pack for Java)``
+`Paquete completo de Java`
 
 Nombre oficial: Extension Pack for Java
 
 Editor: Microsoft
 
-Visual Studio Marketplace - Extension Pack for Java
+Marketplace: Extension Pack for Java
 
-
-``¿Qué incluye este paquete?``
-
-El Extension Pack for Java instala automáticamente todas las herramientas necesarias para desarrollar, compilar, ejecutar y depurar aplicaciones Java dentro de VS Code.
-Incluye las siguientes extensiones:
-
+`Qué incluye`
 Extensión	Funcionalidad principal
-*Language Support for Java™ by Red Hat*:	Agrega soporte al lenguaje Java (autocompletado, linting, navegación).
-*Debugger for Java*:	Permite ejecutar y depurar código paso a paso dentro del editor.
-*Java Test Runner*:	Permite ejecutar y gestionar pruebas unitarias (JUnit, TestNG).
-*Maven for Java*:	Facilita la gestión de dependencias y construcción de proyectos Maven.
-*Project Manager for Java*:	Administra proyectos, paquetes, clases y estructuras de carpetas Java.
+Language Support for Java™ by Red Hat	Soporte de lenguaje: autocompletado, linting, navegación
+Debugger for Java	Ejecutar y depurar código paso a paso
+Java Test Runner	Ejecutar y gestionar pruebas unitarias (JUnit, TestNG)
+Maven for Java	Gestión de dependencias y construcción de proyectos Maven
+Project Manager for Java	Administra proyectos, paquetes, clases y estructura de carpetas
 
-``Instalación paso a paso``
+`Instalación paso a paso`
 
-``Paso 1``Abre Visual Studio Code.
+Abrir VS Code
 
-``Paso 2`` Ve al menú lateral izquierdo y selecciona el icono de Extensiones (Ctrl + Shift + X).
+Abrir panel de Extensiones (Ctrl + Shift + X)
 
-``Paso 3``En el cuadro de búsqueda, escribe:
+Buscar Extension Pack for Java
 
-        Extension Pack for Java
+Seleccionar la extensión de Microsoft y hacer clic en Instalar
 
-``Paso 4``Selecciona la extensión publicada por Microsoft y haz clic en Instalar.
+VS Code instalará automáticamente todas las extensiones incluidas
 
-``Paso 5``VS Code instalará automáticamente todas las extensiones que forman parte del [paquete.](screenshots/screenshot77.png)
+`Configurar JDK`
 
-``Seleccionar el JDK en VS Code``
+Abrir Comando rápido (Ctrl + Shift + P) → Java: Configure Java Runtime
 
-Abre Comando rápido con *Ctrl + Shift + P* Escribe:
+Seleccionar el JDK detectado o agregar ruta manualmente
 
-          Java: Configure Java Runtime
+`Probar el entorno`
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("¡Java funcionando en VS Code!");
+    }
+}
 
-Selecciona el JDK detectado o agrega la ruta manualmente.
+Ejecutar con Run o Ctrl + F5
+Salida esperada: ¡Java funcionando en VS Code!
 
-``Probar el entorno``
+`Python en VS Code`
+Extensión oficial
 
-Crea un archivo Main.java con el siguiente código:
-
-  public class Main {
-      public static void main(String[] args) {
-          System.out.println("¡Java funcionando en VS Code!");
-      }
-  }
-Ejecuta con el botón Run o usando Ctrl + F5.
-
-*Para Python:*
-- **Soporte oficial de Python**: Extensión completa con intérprete y debugging
-
-``Extensión oficial de Python (Microsoft)``
-
-Nombre oficial: Python
-
+Nombre: Python
 Editor: Microsoft
+Marketplace: Python Extension
 
-Visual Studio Marketplace – Python Extension
+`Funciones principales`
 
+Interpretación y ejecución de código Python
 
-``Descripción general``
-La extensión oficial de Python para Visual Studio Code proporciona un entorno completo para programar en este lenguaje.
-Incluye soporte para:
---Interpretación y ejecución de código Python
---Depuración (debugging) paso a paso
---Gestión de entornos virtuales y dependencias
---Integración con Jupyter Notebooks
---Compatibilidad con herramientas de formateo y linting (como Black, Flake8 o Pylint)
---Ejecución de tests con unittest o pytest
+Debugging paso a paso
 
-``Instalación paso a paso``
+Gestión de entornos virtuales
 
-``Paso 1``Abre Visual Studio Code.
+Integración con Jupyter Notebooks
 
-``Paso 2``Ve al panel de Extensiones (icono cuadrado en la barra lateral izquierda o Ctrl + Shift + X).
+Formateo y linting (Black, Flake8, Pylint)
 
-``Paso 3``En el cuadro de búsqueda escribe:
-          *Python*
-``Paso 4``Selecciona la extensión Python publicada por Microsoft.
+Ejecución de tests (unittest, pytest)
 
-``Paso 5``Haz clic en Instalar.
+`Instalación`
 
-``Paso 6``(Opcional) Instala también las extensiones complementarias recomendadas:
+Abrir VS Code
+Abrir Extensiones (Ctrl + Shift + X)
+Buscar Python
+Seleccionar la extensión de Microsoft y hacer clic en Instalar
+Opcional: instalar extensiones complementarias
+Pylance: autocompletado y análisis de tipos
+Jupyter: ejecutar notebooks .ipynb
+Black Formatter: formateo PEP 8
 
---Pylance → ofrece autocompletado y análisis de tipos avanzado.
---Jupyter → permite ejecutar notebooks .ipynb dentro del editor.
---Black Formatter → mantiene el código con formato limpio según PEP 8.
+`Configurar intérprete`
 
-``Configuración inicial del entorno Python``
+Instalar Python desde python.org
+ y marcar “Add Python to PATH”
+En VS Code: Ctrl + Shift + P → Python: Select Interpreter → elegir versión instalada
 
-``Paso 1``Instalar Python en tu sistema
+`Verificación`
+print("¡Python funcionando correctamente en VS Code!")
 
-    --Descarga la versión más reciente desde python.org
-    --Durante la instalación, marca la opción  “Add Python to PATH”.
+Guardar: Ctrl + S
+Ejecutar: botón Run Python File, Menú Ejecutar → Iniciar sin depurar o Ctrl + F5
+Salida esperada: ¡Python funcionando correctamente en VS Code!
 
-``Paso 2``Seleccionar el intérprete en VS Code
+`Debugging básico en Python`
+Acción	Descripción	Atajo
+Punto de interrupción	Detiene ejecución en una línea	F9
+Iniciar depuración	Ejecuta en modo debug	F5
+Paso sobre (Step Over)	Ejecuta la siguiente línea sin entrar en funciones	F10
+Paso dentro (Step Into)	Entra en función o método	F11
+Detener depuración	Finaliza sesión	Shift + F5
 
-    --Abre la paleta de comandos (Ctrl + Shift + P).
-    --Escribe y selecciona:
-          Python: Select Interpreter
-    --Elige la versión de Python que instalaste (por ejemplo, Python 3.12.0).
+**F# en Visual Studio Code (Ionide)**
 
-``Verificación del funcionamiento``
+`1. Extensión oficial`
 
-``Paso 1`` Crea un nuevo archivo llamado hola.py y escribe el siguiente código:
-
-    print("¡Python funcionando correctamente en VS Code!")
-
-``Paso 2``Guarda el archivo (Ctrl + S).
-
-``Paso 3``Ejecuta el programa con uno de los siguientes métodos:
-
-  --Botón  Run Python File (arriba a la derecha).
-  --Menú Ejecutar → Iniciar sin depurar.
-  --O presiona Ctrl + F5.
-
-``Paso 4``Verifica que aparezca la salida en el panel de terminal:
-
-        ¡Python funcionando correctamente en VS Code!
-
-``Herramientas de debugging básicas``
-La extensión permite depurar programas Python fácilmente:
-
-(Acción)	
-*Punto de interrupción*:	Detiene la ejecución en una línea específica.	F9
-*Iniciar depuración*:	Ejecuta el programa en modo debug.	F5
-*Paso sobre (Step Over)*:	Ejecuta la siguiente línea sin entrar en funciones.	F10
-*Paso dentro (Step Into)*:	Entra dentro de una función o método.	F11
-*Detener depuración*:	Finaliza la sesión de depuración.	Shift + F5
-Durante la depuración puedes inspeccionar variables, evaluar expresiones y ver la pila de llamadas en tiempo real.
-
-*Para otros lenguajes:*
-- Busca la extensión oficial del lenguaje que proporcione soporte completo
-*Para F#*
-``Extensión oficial de F# (Ionide for F#)``
-Nombre oficial: Ionide-fsharp
-
+Nombre: Ionide-fsharp
 Editor: Ionide
+Marketplace: Ionide-fsharp
+Funciones principales:
+Resaltado de sintaxis y autocompletado
+Soporte para proyectos .fsproj y .sln
+Ejecución y depuración de aplicaciones F#
+Integración con .NET CLI
+Explorador de proyectos y dependencias
 
-Visual Studio Marketplace – Ionide-fsharp
+`2. Instalación`
 
+Abrir VS Code.
+Ir a Extensiones (Ctrl + Shift + X).
+Buscar Ionide-fsharp y hacer clic en Instalar.
 
-``Descripción general``
+`3. Requisitos previos`
 
-La extensión Ionide for F# proporciona soporte completo para desarrollo en F# dentro de Visual Studio Code.
-Está basada en el ecosistema .NET SDK y ofrece todas las herramientas necesarias para programar, depurar y gestionar proyectos en este lenguaje funcional.
-Incluye:
+Instalar .NET SDK
+ (no solo runtime).
 
---Reconocimiento de sintaxis y resaltado de código.
---Autocompletado inteligente (IntelliSense) y análisis de tipos.
---Soporte para proyectos .fsproj y .sln.
---Ejecución y depuración de aplicaciones F#.
---Integración con el CLI de .NET.
---Explorador de proyectos y dependencias.
+Verificar instalación:
+dotnet --version
+Resultado esperado: 8.0.x
 
-``Instalación paso a paso``
+`4. Crear y abrir proyecto`
 
-``Paso 1`` Abre Visual Studio Code.
+Terminal integrada (Ctrl + ñ o Ctrl + `)
 
-``Paso 2``Ve al menú lateral izquierdo y selecciona Extensiones (Ctrl + Shift + X).
+Ejecutar:
+dotnet new console -lang "F#" -o HolaFSharp
+cd HolaFSharp
+code .
 
-``Paso 3``En el cuadro de búsqueda, escribe:
+VS Code detectará automáticamente el entorno F# y cargará Ionide.
 
-        Ionide-fsharp
+`5. Verificación`
 
-``Paso 4``Selecciona la extensión Ionide-fsharp publicada por Ionide y haz clic en Instalar.
+Abrir Program.fs y usar código base:
+open System
 
-``Requisitos previos``
-Antes de poder usar F# en VS Code, necesitas instalar el SDK de .NET:
-Dirigete a la página oficial de descargas:
-https://dotnet.microsoft.com/download
-
-
-Descarga e instala el .NET SDK (no solo el runtime).
-Verifica la instalación desde la terminal:
-    dotnet --version
-Resultado esperado:
-    8.0.x
-
-
-``Configuración inicial del entorno F#``
-Crear un nuevo proyecto F#:
---Abre la terminal integrada en VS Code (Ctrl + ñ o `Ctrl + ``).
---Ejecuta:
-    dotnet new console -lang "F#" -o HolaFSharp
-    cd HolaFSharp
---Esto crea un proyecto básico de consola en F#.
+[<EntryPoint>]
+let main argv =
+    printfn "¡F# funcionando correctamente en VS Code!"
+    0
 
 
-``Abrir el proyecto en VS Code:``
---Abre la carpeta HolaFSharp creada con:
-    code .
---VS Code detectará automáticamente el entorno F# y cargará la extensión Ionide.
+Guardar (Ctrl + S).
+
+Ejecutar:
+
+dotnet run
 
 
+Salida esperada:
 
-``Verificación del funcionamiento``
+¡F# funcionando correctamente en VS Code!
 
+`6. Debugging básico`
+Acción	Descripción	Atajo
+Punto de interrupción	Detiene la ejecución en una línea	F9
+Iniciar depuración	Ejecuta en modo debug	F5
+Paso sobre (Step Over)	Ejecuta la siguiente línea sin entrar en funciones	F10
+Paso dentro (Step Into)	Entra en función o llamada	F11
+Detener depuración	Finaliza la sesión	Shift + F5
 
-``Paso 1`` Abre el archivo Program.fs y verifica el siguiente código:
+Configuración inicial del depurador:
 
-    // Programa básico en F#
-    open System
+Abrir Ejecutar y depurar en barra lateral.
 
-    [<EntryPoint>]
-    let main argv =
-        printfn "¡F# funcionando correctamente en VS Code!"
-        0
+Hacer clic en Crear un archivo launch.json.
 
-``Paso 2``Guarda los cambios.
+Elegir .NET Core.
 
-(Ctrl + S)
-
-
-``Paso 3``Ejecuta el programa desde la terminal:
-    dotnet run
-Resultado esperado:
-    ¡F# funcionando correctamente en VS Code!
-
-Herramientas de debugging
-
-La extensión Ionide-fsharp integra el sistema de depuración de VS Code a través de .NET Debugger (C#), por lo que puedes usar las mismas herramientas básicas:
-
-*Punto de interrupción*	Detiene la ejecución en una línea específica.	F9
-*Iniciar depuración*	Ejecuta el programa en modo debug.	F5
-*Paso sobre (Step Over)*	Ejecuta la siguiente línea sin entrar en funciones.	F10
-*Paso dentro (Step Into)*	Entra dentro de una función o llamada.	F11
-*Detener depuración	Finaliza* la sesión de depuración.	Shift + F5
-
-``Para configurar la depuración por primera vez:``
-
-``Paso 1``Abre la pestaña Ejecutar y depurar (Run and Debug) en la barra lateral izquierda.
-
-``Paso 2``Haz clic en "Crear un archivo launch.json".
-
-``Paso 3``Elige la opción “.NET Core”.
-
-``Paso 4``VS Code generará un archivo launch.json para iniciar el depurador automáticamente.
+VS Code generará automáticamente launch.json para depuración.
 
 **Configuraciones específicas aplicadas:**
 [Documentar los ajustes que se realizaron, como configuración del intérprete, formateo automático, linting, etc.]
