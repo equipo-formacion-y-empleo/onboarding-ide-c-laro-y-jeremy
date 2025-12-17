@@ -897,7 +897,7 @@ Soporte para proyectos .fsproj y .sln
 Ejecución y depuración de aplicaciones F#
 Integración con .NET CLI
 Explorador de proyectos y dependencias
-
+![Foto de la extension](screenshots/screenshot103.png)
 `2. Instalación`
 
 Abrir VS Code.
@@ -906,7 +906,7 @@ Buscar Ionide-fsharp y hacer clic en Instalar.
 
 `3. Requisitos previos`
 
-Instalar .NET SDK
+![Instalar .NET SDK](screenshots/screenshot104.png)
  (no solo runtime).
 
 Verificar instalación:
@@ -1033,7 +1033,7 @@ public class HolaMundo {
 --Guarda el archivo con el nombre de la clase y la extensión .java.
 En este caso:
 
-HolaMundo.java
+![HolaMundo.java](screenshots/screenshot105.png)
 
 ``Compilar el código``
 
