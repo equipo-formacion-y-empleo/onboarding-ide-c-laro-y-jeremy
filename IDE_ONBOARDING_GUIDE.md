@@ -1067,7 +1067,7 @@ En la consola deberías ver:
 hello Laro
 hello Jeremy
 ---
-
+![Ejemplo Real](screenshots/screenshot102.png)
 ## Configuraciones Recomendadas
 
 **Configuraciones generales:**
